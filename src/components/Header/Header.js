@@ -39,12 +39,12 @@ export default class Header extends Component {
   }
 
   render() {
-    
+    // TODO: login and logout doesn't refresh immediately. 
     return <>
       <nav className='Header'>
        
        
-        {TokenService.hasAuthToken()
+        {this.props.hasAuthToken
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
       </nav>

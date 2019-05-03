@@ -9,9 +9,9 @@ export default class EventListPage extends Component{
   componentDidMount(){
     this.context.clearError()
     EventApiService.getEvents()
-      .then(data=>{console.log(data,'test data')})
+//      .then(data=>{console.log(data,'test data')}) chris told me this kills it, it added delay. 
       .then(this.context.setEventList)
-      .then(()=>{console.log(this.context,'test context after')})
+      .then(()=>{console.log(this.context.eventList,'test context eventList after')})
       .catch(this.context.setError)
   }
 

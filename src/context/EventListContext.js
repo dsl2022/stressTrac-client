@@ -17,9 +17,9 @@ export class EventListProvider extends Component {
   };
 
   setEventList = eventList => {
-    console.log(this.state,'test state before')
+    
     this.setState({ eventList })
-    console.log(this.state,'test state after')
+    
   }
 
   setError = error => {
