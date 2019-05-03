@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import { Route, Switch } from 'react-router-dom'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
-import TokenService from '../../services/token-service'
+//import TokenService from '../../services/token-service'
 import EventListPage from '../../routes/EventListPage/EventListPage'
 import Header from '../Header/Header'
 class App extends Component {
@@ -15,8 +15,9 @@ class App extends Component {
     
     return(
       <div className='App'>
+      <h1>StresTrac</h1>
        <header className='App__header'>
-          <Header />
+          <Header/>
         </header>
       <main className='App__main'>
         <Switch>
@@ -35,7 +36,8 @@ class App extends Component {
           />
         </Switch>
       </main>
-
+      
+      <footer>TODO..</footer>
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 // import './Header.css'
+//import { Redirect } from 'react-router-dom'
 
 export default class Header extends Component {
   handleLogoutClick=()=>{
@@ -10,13 +11,23 @@ export default class Header extends Component {
 
     //console.log(this.props)
   }
-  renderLogoutLink() {
+  renderLogoutAndAccountLink() {
     return (
       <div className='Header__logged-in'>
         <Link
-          onClick={()=> this.handleLogoutClick()}
+          onClick={this.handleLogoutClick}
           to='/login'>
           Logout
+        </Link>
+        <Link
+          onClick={()=> this.handleLogoutClick()}
+          to='/events'>
+          Events
+        </Link>
+        <Link
+          onClick={()=> this.handleLogoutClick()}
+          to='/add-event'>
+          Add a Event        
         </Link>
       </div>
     )
@@ -26,6 +37,7 @@ export default class Header extends Component {
     console.log(TokenService.hasAuthToken(),'test has token')
     return (
       <div className='Header__not-logged-in'>
+      
         <Link
           to='/login'>
           Log in
@@ -40,13 +52,18 @@ export default class Header extends Component {
 
   render() {
     // TODO: login and logout doesn't refresh immediately. 
+    console.log(window.location.pathname,'test location')
+    // if(window.location.pathname==='/login'){
+    //   const hideLogout=true
+    // }
     return <>
       <nav className='Header'>
        
        
-        {this.props.hasAuthToken
-          ? this.renderLogoutLink()
+        {TokenService.hasAuthToken()
+          ? this.renderLogoutAndAccountLink()
           : this.renderLoginLink()}
+          
       </nav>
 
       
