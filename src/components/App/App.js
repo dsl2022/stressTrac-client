@@ -6,11 +6,15 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 //import TokenService from '../../services/token-service'
 import EventListPage from '../../routes/EventListPage/EventListPage'
 import EventPage from '../../routes/EventPage/EventPage'
+import AddEventPage from '../../routes/AddEventPage/AddEventPage'
 import Header from '../Header/Header'
 class App extends Component {
   state = {
     hasError:false,
+    
   }
+
+
 
   render(){
     
@@ -34,6 +38,10 @@ class App extends Component {
           <Route 
             path={'/login'}
             component={LoginPage}
+          />
+          <Route 
+            path={'/add-event'}
+            component={AddEventPage}
           />
           <Route 
             path={'/events/:eventId'}

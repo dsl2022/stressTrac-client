@@ -14,7 +14,12 @@ export class EventListProvider extends Component {
   state = {
     eventList: [],
     error: null,
+    
   };
+
+  setUserId=userId=>{
+    this.setState({userId})
+  }
 
   setEventList = eventList => {
     

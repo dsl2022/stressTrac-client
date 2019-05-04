@@ -34,9 +34,9 @@ const EventApiService = {
         'content-type':'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body:JSON.stringify({
+      body:JSON.stringify(     
         content
-      }),
+      ),
     })
       .then(res=>
         (!res.ok)
