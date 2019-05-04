@@ -1,17 +1,52 @@
-// import React, { Component } from 'react'
-// import EventContext, { nullArticle } from '../../contexts/ArticleContext'
-// import EventApiService from '../../services/event-api-service'
+import React, { Component } from 'react'
+import EventContext from '../../context/EventContext'
+import EventApiService from '../../services/event-api-service'
+export default class EventPage extends Component{
+  static defaultProps = {
+    match:{params:{}}
+  }
 
-// export default class EventPage extends Component{
-//   static defaultProps = {
-//     match:{params:{}}
-//   }
+  static contextType = EventContext
 
-//   static contextType = EventContext
+  componentDidMount(){
+    const {eventId} = this.props.match.params
+    console.log(eventId,'test eventId')
+    this.context.clearError()
+    EventApiService.getEvent(eventId)
+      .then(this.context.setEvent)
+      .catch(this.context.setError)
+  }
+  componentWillUnmount() {
+    this.context.clearEvent()
+  }
 
-//   componentDidMount(){
-//     const {eventId} = this.props.match.params
-//     this.context.c
-//   }
+  renderEvent(){
+    const{event} = this.context
+    // console.log(event,'test render event')
+    return <>
+      <h2>{event.stress_event}</h2>
+      <div>{event.full_name}</div>
+      <div>stress score {event.stress_score}</div>
+      <div>working efficiency {event.work_efficiency}</div>
+      <div>coping {event.coping}</div>
+      <div>date_recorded {event.date_recorded}</div>
+      <div>mood {event.mood}</div>
+      <div>stress_cause {event.stress_cause}</div>                
+      <div>symptoms {event.symptoms}</div>
+      
+      
+    </>
+  }
 
-// }
+  render(){
+    console.log(this.context,'test event page context')
+    let content = this.renderEvent()
+    console.log(content,'test content inside render')
+    return(
+      <section>
+      {content}
+      </section>
+    )
+  }
+
+}

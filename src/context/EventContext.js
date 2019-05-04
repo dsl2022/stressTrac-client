@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 
 export const nullEvent = {
-  author: {},
-  tags: [],
+      coping: "",
+      date_recorded: "",
+      id:"",
+      mood:"",
+      stress_cause:"",
+      stress_event:"",
+      stress_score:"",
+      symptoms: "",
+      user_id:"",
+      work_efficiency:"",
 }
 
 const EventContext = React.createContext({
@@ -16,7 +24,7 @@ const EventContext = React.createContext({
 
 export default EventContext
 
-export class ArticleProvider extends Component {
+export class EventProvider extends Component {
   state = {
     event: nullEvent,
     error: null,

@@ -5,6 +5,7 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 //import TokenService from '../../services/token-service'
 import EventListPage from '../../routes/EventListPage/EventListPage'
+import EventPage from '../../routes/EventPage/EventPage'
 import Header from '../Header/Header'
 class App extends Component {
   state = {
@@ -34,6 +35,11 @@ class App extends Component {
             path={'/login'}
             component={LoginPage}
           />
+          <Route 
+            path={'/events/:eventId'}
+            component={EventPage}
+          />
+
         </Switch>
       </main>
       

@@ -5,27 +5,35 @@ import TokenService from '../../services/token-service'
 //import { Redirect } from 'react-router-dom'
 
 export default class Header extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      hideLogout:true
+    }
+  }
   handleLogoutClick=()=>{
     TokenService.clearAuthToken();
+    this.setState({hideLogout:false})
     //debugger
 
     //console.log(this.props)
   }
   renderLogoutAndAccountLink() {
+    
     return (
       <div className='Header__logged-in'>
         <Link
           onClick={this.handleLogoutClick}
-          to='/login'>
+          to='/'>
           Logout
         </Link>
         <Link
-          onClick={()=> this.handleLogoutClick()}
-          to='/events'>
+          
+          to='/'>
           Events
         </Link>
         <Link
-          onClick={()=> this.handleLogoutClick()}
+          
           to='/add-event'>
           Add a Event        
         </Link>
@@ -60,9 +68,10 @@ export default class Header extends Component {
       <nav className='Header'>
        
        
-        {TokenService.hasAuthToken()
+        {this.state.hideLogout
           ? this.renderLogoutAndAccountLink()
-          : this.renderLoginLink()}
+          :this.renderLoginLink()
+          }
           
       </nav>
 
