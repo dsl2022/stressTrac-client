@@ -67,15 +67,15 @@ const EventApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       }
     })
-      .then(res=>{
-        (!res.ok)
-          ?res.json().then(e=>Promise.reject(e))
-          :res.json()
+      // .then(res=>{
+      //   (!res.ok)
+      //     ?res.json().then(e=>Promise.reject(e))
+      //     :res.json()
         
-      })
-      .then(data=>{
-        console.log({data})
-      })
+      // })
+      // .then(data=>{
+      //   console.log({data})
+      // })
       .catch(error=>{
         console.log(error)
       })

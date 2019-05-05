@@ -12,7 +12,7 @@ export default class AddEventForm extends Component{
 
   handleSubmit=ev=>{
     ev.preventDefault()
-    const userId = window.localStorage.getItem('userId')    
+   
     const { stress_event,coping,mood,stress_cause,stress_score,symptoms,work_efficiency } = ev.target
     const newEvent={
       coping: coping.value,            
@@ -21,27 +21,21 @@ export default class AddEventForm extends Component{
       stress_event:stress_event.value,
       stress_score:stress_score.value,
       symptoms:symptoms.value,
-      // user_id:userId,
+   
       work_efficiency:work_efficiency.value
     }
-    // const newEvent={
-    //     stress_event: "llulu",
-    //     mood: 4,
-    //     work_efficiency: 5,
-    //     stress_cause: "work related",
-    //     stress_score:4,
-    //     symptoms: "headache",
-    //     coping: "listen to music"
-    // }
-    console.log(newEvent,'test stress_event')
+   
+    console.log(this.props.props,'test this inside handle submit')
     EventApiService.postEvent(newEvent)
+    this.props.props.history.push('/')
+    
 
   }
 
   static contextType = UserIdContext;
   render() {
     const { error } = this.state
-    console.log(window.localStorage.getItem('userId'),'test userid')
+    
     return (
       <form
         className='AddEventForm'
