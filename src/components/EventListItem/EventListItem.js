@@ -15,7 +15,7 @@ export default class EventListItem extends Component{
   }
 }
 
-function NiceDate({ date, format='Do MMMM YYYY' }) {
+function NiceDate({ date, format='Do MMMM YYYY h:mm a' }) {
   return formatDate(date, format)
 }
 

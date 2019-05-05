@@ -43,21 +43,21 @@ const EventApiService = {
           ?res.json().then(e=>Promise.reject(e))
           :res.json())
   },
-  updateEvent(content){
-    return fetch(`${config.API_ENDPOINT}/events`,{
+  updateEvent(content,eventId){
+    return fetch(`${config.API_ENDPOINT}/events/${eventId}`,{
       method:'PATCH',
       headers:{
         'content-type':'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body:JSON.stringify({
+      body:JSON.stringify(
       content
-    })
+    )
   })
-    .then(res=>
-      (!res.ok)
-      ?res.json().then(e=>Promise.reject(e))
-      :res.json())
+    // .then(res=>
+    //   (!res.ok)
+    //   ?res.json().then(e=>Promise.reject(e))
+    //   :res.json())
   },
   deleteEvent(eventId){
     return fetch(`${config.API_ENDPOINT}/events/${eventId}`,{

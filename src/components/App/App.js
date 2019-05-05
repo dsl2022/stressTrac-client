@@ -6,6 +6,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 //import TokenService from '../../services/token-service'
 import EventListPage from '../../routes/EventListPage/EventListPage'
 import EventPage from '../../routes/EventPage/EventPage'
+import EditEventPage from '../../routes/EditEventPage/EditEventPage'
 import AddEventPage from '../../routes/AddEventPage/AddEventPage'
 import Header from '../Header/Header'
 class App extends Component {
@@ -47,6 +48,9 @@ class App extends Component {
             path={'/events/:eventId'}
             component={EventPage}
           />
+          <Route
+            path={'/edit-event/:eventId'}
+            component={EditEventPage}/>
 
         </Switch>
       </main>

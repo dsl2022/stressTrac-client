@@ -48,11 +48,11 @@ export default class Header extends Component {
       
         <Link
           to='/login'>
-          Log in
+          Sign in
         </Link>
         <Link
           to='/register'>
-          Register
+          Sign Up
         </Link>
       </div>
     )

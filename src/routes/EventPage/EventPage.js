@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service'
+import {Link} from 'react-router-dom'
 //import DeleteEventRequest from '../../components/EventDelete/deleteEvent'
 export default class EventPage extends Component{
   static defaultProps = {
@@ -26,6 +27,8 @@ export default class EventPage extends Component{
     .then(()=>this.props.history.push('/'))
     
   }
+
+
 
   renderEvent(){
     const{event} = this.context
@@ -55,6 +58,11 @@ export default class EventPage extends Component{
       <section>
       {content}
       <button type='button' onClick={()=>this.deleteEventRequest(eventId)}>delete</button>
+      <Link
+          //onClick={this.handleLogoutClick}
+        to={`/edit-event/${eventId}`}>
+          edit
+        </Link>
       </section>
     )
   }

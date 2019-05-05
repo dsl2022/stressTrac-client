@@ -1,44 +1,53 @@
 import React,{Component} from 'react'
-//import EventApiService from '../../services/event-api-service'
-//import config from '../../config'
-
+import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service';
-export default class AddEventForm extends Component{
+
+
+export default class EditEventForm extends Component{
 
   state = {error:null,
-      }
-  
-  
+    stress_event:'',
+    stress_score:'',
+    stress_cause:'',
+    work_efficiency:'',
+    mood:'',
+    symptoms:''
+  }
+  static contextType = EventContext
+  static defaultProps = {
+    match:{params:{}}
+  }
 
   handleSubmit=ev=>{
     ev.preventDefault()
-   
     const { stress_event,coping,mood,stress_cause,stress_score,symptoms,work_efficiency } = ev.target
-    const newEvent={
+    console.log(new Date().toISOString(),'test time')
+    const eventToUpdate={
       coping: coping.value,            
       mood:mood.value,
       stress_cause:stress_cause.value,
       stress_event:stress_event.value,
       stress_score:stress_score.value,
       symptoms:symptoms.value,
-   
-      work_efficiency:work_efficiency.value
+      work_efficiency:work_efficiency.value,
+      date_recorded:new Date().toISOString()
     }
-   
-    console.log(this.props.props,'test this inside handle submit')
-    EventApiService.postEvent(newEvent)
-    this.props.props.history.push('/')
-    
-
+    console.log(this.props,'test props')
+    EventApiService.updateEvent(eventToUpdate,this.context.event.id)
+    .then(()=>{
+      this.props.props.history.push('/')
+    })
   }
 
- 
+
+
   render() {
     const { error } = this.state
-    
+    const event = this.context.event
+    console.log(event,'test event inside render')
     return (
       <form
-        className='AddEventForm'
+        className='EditEventForm'
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
@@ -51,6 +60,7 @@ export default class AddEventForm extends Component{
           <input
             name='stress_event'
             type='text'
+            defaultValue={event.stress_event}
             required
             id='AddEventForm__stress_event'>
           </input>
@@ -62,6 +72,7 @@ export default class AddEventForm extends Component{
           <input
             name='stress_cause'
             type='text'
+            defaultValue={event.stress_cause}
             required
             id='AddEventForm__stress_cause'>
           </input>
@@ -73,6 +84,7 @@ export default class AddEventForm extends Component{
           <input
             name='coping'
             type='text'
+            defaultValue={event.coping}
             required
             id='AddEventForm__coping'>
           </input>
@@ -115,8 +127,10 @@ export default class AddEventForm extends Component{
           <textarea
             name='symptoms'
             type='text'
+            
             required
             id='AddEventForm__symptoms'>
+           
           </textarea>
           
         </div>
