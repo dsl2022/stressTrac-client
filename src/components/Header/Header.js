@@ -23,6 +23,11 @@ export default class Header extends Component {
     return (
       <div className='Header__logged-in'>
         <Link
+          
+          to='/account'>
+          Accout
+        </Link>
+        <Link
           onClick={this.handleLogoutClick}
           to='/login'>
           Logout
@@ -53,6 +58,10 @@ export default class Header extends Component {
         <Link
           to='/register'>
           Sign Up
+        </Link>
+        <Link
+          to='/home'>
+          Home
         </Link>
       </div>
     )

@@ -31,6 +31,9 @@ export default class AddEventForm extends Component{
     
 
   }
+  handleChangeDescription = e => {
+    this.setState({ description: e.target.value })
+  };
 
  
   render() {

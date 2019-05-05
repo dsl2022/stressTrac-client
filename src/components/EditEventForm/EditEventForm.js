@@ -5,23 +5,23 @@ import EventApiService from '../../services/event-api-service';
 
 export default class EditEventForm extends Component{
 
-  state = {error:null,
-    stress_event:'',
-    stress_score:'',
-    stress_cause:'',
-    work_efficiency:'',
-    mood:'',
-    symptoms:''
+  state = {
+    error:null,    
+    symptoms:this.context.event.symptoms
   }
+
   static contextType = EventContext
   static defaultProps = {
     match:{params:{}}
   }
+  handleChangeSymptoms = e => {
+    this.setState({ symptoms: e.target.value })
+  }
 
   handleSubmit=ev=>{
     ev.preventDefault()
-    const { stress_event,coping,mood,stress_cause,stress_score,symptoms,work_efficiency } = ev.target
-    console.log(new Date().toISOString(),'test time')
+    const { stress_event,coping,mood,stress_cause,stress_score,work_efficiency } = ev.target
+    const symptoms=this.state.symptoms
     const eventToUpdate={
       coping: coping.value,            
       mood:mood.value,
@@ -127,10 +127,10 @@ export default class EditEventForm extends Component{
           <textarea
             name='symptoms'
             type='text'
-            
+            value={this.state.symptoms}
+             onChange={this.handleChangeSymptoms}            
             required
             id='AddEventForm__symptoms'>
-           
           </textarea>
           
         </div>

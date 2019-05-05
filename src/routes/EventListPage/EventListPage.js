@@ -21,6 +21,7 @@ export default class EventListPage extends Component{
     
     let { eventList = [] } = this.context
     console.log(this.state,'test state eventlist')
+    // if searchTerm is present, then filter events by it. 
     if(this.state.searchTerm)
       eventList=eventList.filter(event=>event.stress_event.includes(this.state.searchTerm))
     

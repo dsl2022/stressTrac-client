@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service'
 import {Link} from 'react-router-dom'
+import {NiceDate} from '../../components/Util/Util'
 //import DeleteEventRequest from '../../components/EventDelete/deleteEvent'
 export default class EventPage extends Component{
   static defaultProps = {
@@ -35,14 +36,14 @@ export default class EventPage extends Component{
     // console.log(event,'test render event')
     return <>
       <h2>{event.stress_event}</h2>
-      <div>{event.full_name}</div>
-      <div>stress score {event.stress_score}</div>
-      <div>working efficiency {event.work_efficiency}</div>
-      <div>coping {event.coping}</div>
-      <div>date_recorded {event.date_recorded}</div>
-      <div>mood {event.mood}</div>
-      <div>stress_cause {event.stress_cause}</div>                
-      <div>symptoms {event.symptoms}</div>
+      <div>User Name: {event.full_name}</div>
+      <div>stress score: {event.stress_score}</div>
+      <div>working efficiency: {event.work_efficiency}</div>
+      <div>coping: {event.coping}</div>
+      <div>date updated: <NiceDate date={event.date_recorded} /></div>
+      <div>mood: {event.mood}</div>
+      <div>trigger of stress: {event.stress_cause}</div>                
+      <div>symptoms: {event.symptoms}</div>
       
       
     </>

@@ -8,7 +8,10 @@ import EventListPage from '../../routes/EventListPage/EventListPage'
 import EventPage from '../../routes/EventPage/EventPage'
 import EditEventPage from '../../routes/EditEventPage/EditEventPage'
 import AddEventPage from '../../routes/AddEventPage/AddEventPage'
+import LandingPage from '../../routes/LandingPage/LandingPage'
 import Header from '../Header/Header'
+import Footer from '../../components/Footer/Footer'
+import AccountPage from '../../routes/AccountPage/AccountPage'
 class App extends Component {
   state = {
     hasError:false,
@@ -41,8 +44,16 @@ class App extends Component {
             component={LoginPage}
           />
           <Route 
+            path={'/home'}
+            component={LandingPage}
+          />
+          <Route 
             path={'/add-event'}
             component={AddEventPage}
+          />
+          <Route 
+            path={'/account'}
+            component={AccountPage}
           />
           <Route 
             path={'/events/:eventId'}
@@ -55,7 +66,9 @@ class App extends Component {
         </Switch>
       </main>
       
-      <footer>TODO..</footer>
+      <footer>
+        <Footer />
+      </footer>
       </div>
     )
   }
