@@ -38,7 +38,8 @@ export default class EventListPage extends Component{
     let { eventList = [] } = this.context
     //console.log(this.state,'test state eventlist')
     // if searchTerm is present, then filter events by it. 
-  
+    if(!this.state.startDate && !this.state.searchTerm)
+      eventList = eventList.map(event=>event)
     if(this.state.searchTerm)
       eventList=eventList.filter(event=>event.stress_event.includes(this.state.searchTerm))
     
@@ -61,11 +62,14 @@ export default class EventListPage extends Component{
   }
 
   showAllEvent=()=>{
-    this.setState({startDate:''})
+    this.setState({
+      startDate:'',
+      searchTerm:''
+    })
   }
   render() {
     const { error } = this.context
-    console.log(this.NiceDate({date:this.state.startDate}).slice(0,10),'test inside render startdate')
+    //console.log(this.NiceDate({date:this.state.startDate}).slice(0,10),'test inside render startdate')
     return (
       <div>
         <div>
@@ -86,8 +90,8 @@ export default class EventListPage extends Component{
           
           />
           <button 
-          onClick={()=>this.showAllEvent}
-          type='button'>Show All Events</button>
+             onClick={this.showAllEvent}
+             type='button'>Show All Events</button>
           </label>
           
         </div>
