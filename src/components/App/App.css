@@ -1,0 +1,21 @@
+
+
+.footer{
+  display:flex;
+  justify-content: center;
+}
+
+
+
+/* ---- reset ---- */
+
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+

@@ -21,14 +21,14 @@ export default class EditEventForm extends Component{
   handleSubmit=ev=>{
     ev.preventDefault()
     const { stress_event,coping,mood,stress_cause,stress_score,work_efficiency } = ev.target
-    const symptoms=this.state.symptoms
+    
     const eventToUpdate={
       coping: coping.value,            
       mood:mood.value,
       stress_cause:stress_cause.value,
       stress_event:stress_event.value,
       stress_score:stress_score.value,
-      symptoms:symptoms.value,
+      symptoms:this.state.symptoms,
       work_efficiency:work_efficiency.value,
       date_recorded:new Date().toISOString()
     }
@@ -44,7 +44,8 @@ export default class EditEventForm extends Component{
   render() {
     const { error } = this.state
     const event = this.context.event
-    console.log(event,'test event inside render')
+
+    console.log(this.state.symptoms,'test symptoms')
     return (
       <form
         className='EditEventForm'

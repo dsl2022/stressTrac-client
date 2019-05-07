@@ -3,6 +3,7 @@ import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service'
 import {Link} from 'react-router-dom'
 import {NiceDate} from '../../components/Util/Util'
+import './EventPage.css'
 //import DeleteEventRequest from '../../components/EventDelete/deleteEvent'
 export default class EventPage extends Component{
   static defaultProps = {
@@ -56,7 +57,7 @@ export default class EventPage extends Component{
     const {eventId} = this.props.match.params
     console.log(eventId,'test id')
     return(
-      <section>
+      <section className='EventPage'>
       {content}
       <button type='button' onClick={()=>this.deleteEventRequest(eventId)}>delete</button>
       <Link

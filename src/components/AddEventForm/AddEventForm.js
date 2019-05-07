@@ -3,6 +3,8 @@ import React,{Component} from 'react'
 //import config from '../../config'
 
 import EventApiService from '../../services/event-api-service';
+import './AddEventForm.css'
+
 export default class AddEventForm extends Component{
 
   state = {error:null,
@@ -81,7 +83,7 @@ export default class AddEventForm extends Component{
           </input>
         </div>
        
-       <div>
+       <div className='add_event_dropdown_selection'>
        <label htmlFor='AddEventForm__mood'>
             Mood 
           </label >
@@ -90,8 +92,7 @@ export default class AddEventForm extends Component{
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
-       </div>
-       <div>
+       
        <label htmlFor='AddEventForm__stress_score'>
             Stress Score 
           </label>
@@ -100,8 +101,7 @@ export default class AddEventForm extends Component{
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
-       </div>
-       <div>
+       
        <label htmlFor='AddEventForm__work_efficiency'>
             Ability to work and focus 
           </label>

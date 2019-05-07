@@ -1,0 +1,42 @@
+.LandingPageContent{
+  position: relative;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #26408B;
+}
+
+.landing-hero{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:60px;
+  
+}
+.explore-streSTrac a{
+  
+  color:white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#landing-title{
+  color:white;
+  font-size: 80px;
+  
+  text-align: center;
+}
+.landing-slogan{
+  color:white;
+  font-size: 38px;
+  
+  text-align: center;
+}
+
+.how-it-work{
+  margin-top:50px;
+  color:white;
+  font-size: 80px;  
+  text-align: center;
+}

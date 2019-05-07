@@ -1,0 +1,46 @@
+
+
+.social_icon{
+
+  
+  width:90px;
+  height:90px;
+  color:white;
+  margin-left:16px;
+  margin-right:0;
+  border-radius:100%;
+  
+  text-align:right;
+  
+  list-style:none;
+}
+
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:60px;
+  height:60px;
+  border-radius:100%;
+  
+  
+  
+}
+
+
+.footer{
+  display:flex;
+  justify-content: center;
+ flex-direction: column;
+  
+  
+  width:100%;
+  
+  background-color: #0F084B;
+}
+
+.copyright-text{
+  color:white;
+}

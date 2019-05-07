@@ -5,6 +5,7 @@ import EventListItem from '../../components/EventListItem/EventListItem'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { format as formatDate } from 'date-fns'
+import './EventListPage.css'
 export default class EventListPage extends Component{
   
   static contextType = EventListContext;
@@ -68,19 +69,18 @@ export default class EventListPage extends Component{
     })
   }
   render() {
-    const { error } = this.context
-    //console.log(this.NiceDate({date:this.state.startDate}).slice(0,10),'test inside render startdate')
+    const { error } = this.context    
     return (
-      <div>
-        <div>
+      <div className='EventListPage'>
+        <div className='search_by_title'>
           <label>Search By Title:
-            <input type='text'
+            <input className='search_by_title_input' type='text'
             onChange={this.searchByTitle}/>
           </label>
           
           
         </div>
-        <div>
+        <div className='search_by_date'>
           <label>
         Search By Date:
           <DatePicker 

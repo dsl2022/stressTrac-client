@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import LoginLogoutContext from '../../context/LoginLogoutContext'
-
+import './Header.css'
 // import './Header.css'
 //import { Redirect } from 'react-router-dom'
 
 export default class Header extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     hasAuthToken:TokenService.hasAuthToken()
-  //   }
-  // }
+  
   state = {
-       hasAuthToken:TokenService.hasAuthToken()
+       hideLogout:!TokenService.hasAuthToken()
   }
   static contextType = LoginLogoutContext
 
@@ -22,6 +17,7 @@ export default class Header extends Component {
   handleLogoutClick=()=>{
     TokenService.clearAuthToken();
     this.context.setHideLogoutTrue()
+    this.setState(TokenService.hasAuthToken)
     //this.setState({hideLogout:this.context.hideLogout})
     //debugger
 
@@ -62,17 +58,21 @@ export default class Header extends Component {
       <div className='Header__not-logged-in'>
       
         <Link
+          to='/home'>
+          Home
+        </Link>
+        
+      
+        <Link
           to='/login'>
           Sign in
         </Link>
+     
         <Link
           to='/register'>
           Sign Up
         </Link>
-        <Link
-          to='/home'>
-          Home
-        </Link>
+    
       </div>
     )
   }
@@ -97,8 +97,8 @@ export default class Header extends Component {
     //   }
     return <>
       <nav className='Header'>
-       
-       {renderHeader}
+      <h1 className='logo'>StresTrac</h1>
+          {renderHeader}
         
           
       </nav>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm//LoginForm'
-
+import './LoginPage.css'
 //import { Section } from '../../components/Utils/Utils'
 
 export default class LoginPage extends Component {
@@ -22,10 +22,12 @@ export default class LoginPage extends Component {
   render() {
     return (
       <section className='LoginPage'>
-        <h2>Login</h2>
+        
+        <div className='LoginFormContainer'>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />
+        </div>
       </section>
     )
   }

@@ -4,6 +4,7 @@ import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 //import UserIdContext from '../../context/UserIdContext'
 import LoginLogoutContext from '../../context/LoginLogoutContext'
+import './LoginForm.css'
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {}
@@ -38,6 +39,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <div className='LoginInForm'>
       <form
         className='LoginForm'
         onSubmit={this.handleSubmitJwtAuth}
@@ -68,6 +70,7 @@ export default class LoginForm extends Component {
           Login
         </button>
       </form>
+      </div>
     )
   }
 }

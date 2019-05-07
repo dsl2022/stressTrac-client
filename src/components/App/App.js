@@ -12,6 +12,12 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import Header from '../Header/Header'
 import Footer from '../../components/Footer/Footer'
 import AccountPage from '../../routes/AccountPage/AccountPage'
+import PublicOnlyRoute from '../Util/PublicOnlyRoute'
+import PrivateRoute from '../Util/PrivateRoute'
+import './App.css'
+
+
+
 class App extends Component {
   state = {
     hasError:false,
@@ -23,23 +29,26 @@ class App extends Component {
   render(){
     
     return(
+    
+      
       <div className='App'>
-      <h1>StresTrac</h1>
+       
        <header className='App__header'>
           <Header/>
         </header>
       <main className='App__main'>
+      
         <Switch>
-        <Route
+        <PrivateRoute
               exact
               path={'/'}
               component={EventListPage}
             />
-          <Route 
+          <PublicOnlyRoute 
             path={'/register'}
             component={RegistrationPage}
           />
-          <Route 
+          <PublicOnlyRoute 
             path={'/login'}
             component={LoginPage}
           />
@@ -47,19 +56,19 @@ class App extends Component {
             path={'/home'}
             component={LandingPage}
           />
-          <Route 
+          <PrivateRoute 
             path={'/add-event'}
             component={AddEventPage}
           />
-          <Route 
+          <PrivateRoute 
             path={'/account'}
             component={AccountPage}
           />
-          <Route 
+          <PrivateRoute 
             path={'/events/:eventId'}
             component={EventPage}
           />
-          <Route
+          <PrivateRoute
             path={'/edit-event/:eventId'}
             component={EditEventPage}/>
 
@@ -69,7 +78,10 @@ class App extends Component {
       <footer>
         <Footer />
       </footer>
+     
       </div>
+     
+    
     )
   }
 

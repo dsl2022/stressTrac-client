@@ -1,0 +1,15 @@
+.search_by_title_input
+{
+  border: 1px solid #ddd;
+  display: block;
+  font-size: 0.1em;
+  margin-bottom: 40px;  
+  text-align: left;  
+  border-radius: 4px;
+  width:100px;
+}
+
+.EventListPage{
+  
+  background-color: white;
+}
