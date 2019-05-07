@@ -44,7 +44,7 @@ export default class RegistrationForm extends Component {
         </div>
         <div className='full_name'>
           <label htmlFor='RegistrationForm__full_name'>
-            Full name *
+            Full name 
           </label>
           <input
             name='full_name'
@@ -55,7 +55,7 @@ export default class RegistrationForm extends Component {
         </div>
         <div className='user_name'>
           <label htmlFor='RegistrationForm__user_name'>
-            User name *
+            User name 
           </label>
           <input
             name='user_name'
@@ -66,7 +66,7 @@ export default class RegistrationForm extends Component {
         </div>
         <div className='password'>
           <label htmlFor='RegistrationForm__password'>
-            Password *
+            Password 
           </label>
           <input
             name='password'

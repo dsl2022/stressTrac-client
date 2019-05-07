@@ -9,9 +9,9 @@ export default class LandingPage extends Component{
      
       <div className='LandingPageContent'>
      <div className='landing-hero'>
-     <span id='landing-title'>STRESS TRACKING</span>
-     <p className='landing-slogan'>Track your Stress Events, This Tool helps you
-          develop a stress event log, help you understand your stress and manage it.
+     <span id='landing-title'>SAY GOODBYE TO STRESS</span>
+     <p className='landing-slogan'>Track your Stress, analyze, 
+      ,understand, reflect, have your stress under control.
         </p>
         <div className='explore-streSTrac'>
         <Link

@@ -4,7 +4,7 @@ import EventApiService from '../../services/event-api-service'
 import {Link} from 'react-router-dom'
 import {NiceDate} from '../../components/Util/Util'
 import './EventPage.css'
-//import DeleteEventRequest from '../../components/EventDelete/deleteEvent'
+
 export default class EventPage extends Component{
   static defaultProps = {
     match:{params:{}}
@@ -34,7 +34,7 @@ export default class EventPage extends Component{
 
   renderEvent(){
     const{event} = this.context
-    // console.log(event,'test render event')
+    
     return <>
       <h2>{event.stress_event}</h2>
       <div>User Name: {event.full_name}</div>
@@ -50,18 +50,16 @@ export default class EventPage extends Component{
     </>
   }
 
-  render(){
-    console.log(this.context,'test event page context')
-    let content = this.renderEvent()
-    console.log(content,'test content inside render')
+  render(){    
+    let content = this.renderEvent()    
     const {eventId} = this.props.match.params
-    console.log(eventId,'test id')
+    
     return(
       <section className='EventPage'>
       {content}
       <button type='button' onClick={()=>this.deleteEventRequest(eventId)}>delete</button>
       <Link
-          //onClick={this.handleLogoutClick}
+          
         to={`/edit-event/${eventId}`}>
           edit
         </Link>

@@ -9,7 +9,66 @@
   width:100px;
 }
 
+.EventItemsContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+}
+
 .EventListPage{
+
+  
   
   background-color: white;
+}
+
+.search_by_title input{
+  margin-bottom: 2px;
+}
+
+.search_by_title{
+  display:flex;
+  justify-content: space-between,center;
+  align-items: baseline;  
+  width:350px;
+  margin-left: 20px;  
+  margin-bottom: 5px;
+}
+
+.search_by_title input{
+  font-size:30x;
+  height:18px;
+  width:180px;
+  margin-left: 15px;
+  
+}
+
+.search-bar{
+
+  display:flex;
+  justify-content: space-evenly;
+  align-items: baseline;  
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.show-all-event-button{
+  font-size: 20px;
+  margin-top: 5px;
+  
+}
+
+.search_by_date label{
+  margin-right: 15px;
+}
+
+.date-picker {
+  margin-left: 15px;
+  
+}
+
+.date-picker input{
+  margin-top: 5px;
+  height: 20px;
 }

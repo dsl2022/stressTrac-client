@@ -13,18 +13,23 @@ export default class EventListItem extends Component{
     if(event.stress_score===3)        
         eventLevel='acute'
     return(
-
-      <Link to={`/events/${event.id}`} className='EventListItem'>
-          <h2 className='EventListItem__heading'>
+      
+      <Link to={`/events/${event.id}`} className='EventListItem_link'>
+      <div className='EventListItem'>
+          <div className='EventListItem__heading'>
+          <h2 >
             {event.stress_event}
           </h2>
+          </div>
           <div className='event_level'>
             {eventLevel}
           </div>
           <div className='event_date'>
             <EventDate event={event}/>
           </div>
+          </div>
       </Link>
+      
     )
   }
 }

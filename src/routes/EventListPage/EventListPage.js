@@ -11,7 +11,8 @@ export default class EventListPage extends Component{
   static contextType = EventListContext;
   state={
     showAll:true,
-    startDate: new Date()
+    startDate: '',
+    searchTerm:''
   }
 
   
@@ -72,35 +73,43 @@ export default class EventListPage extends Component{
     const { error } = this.context    
     return (
       <div className='EventListPage'>
+      <div className='search-bar'>
         <div className='search_by_title'>
-          <label>Search By Title:
+          <label>Search By Title: </label>
             <input className='search_by_title_input' type='text'
-            onChange={this.searchByTitle}/>
-          </label>
-          
-          
+            onChange={this.searchByTitle}/> 
         </div>
+        
         <div className='search_by_date'>
           <label>
         Search By Date:
+          <span className='date-picker'>
           <DatePicker 
             
             selected={this.state.startDate}
             onChange={this.handleChange}
           
           />
-          <button 
+          </span>
+          </label>
+          </div>
+          
+        <div className='show-all-event'>
+        <button className='show-all-event-button'
              onClick={this.showAllEvent}
              type='button'>Show All Events</button>
-          </label>
           
+          </div>
         </div>
         
       <section className='EventListPage'>
+      <div className='EventItemsContainer'>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderEvents()}
+      </div>
       </section>
+      
       </div>
     )
   }
