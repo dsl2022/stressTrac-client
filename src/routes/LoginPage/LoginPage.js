@@ -22,7 +22,7 @@ export default class LoginPage extends Component {
   render() {
     return (
       <section className='LoginPage'>
-        
+        <h2>Sign in</h2>
         <div className='LoginFormContainer'>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}

@@ -3,6 +3,7 @@ import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service'
 import {Link} from 'react-router-dom'
 import {NiceDate} from '../../components/Util/Util'
+import ParticleComponent from "../../ParticleComponent";
 import './EventPage.css'
 
 export default class EventPage extends Component{
@@ -36,15 +37,15 @@ export default class EventPage extends Component{
     const{event} = this.context
     
     return <>
-      <h2>{event.stress_event}</h2>
-      <div>User Name: {event.full_name}</div>
-      <div>stress score: {event.stress_score}</div>
-      <div>working efficiency: {event.work_efficiency}</div>
-      <div>coping: {event.coping}</div>
-      <div>date updated: <NiceDate date={event.date_recorded} /></div>
-      <div>mood: {event.mood}</div>
-      <div>trigger of stress: {event.stress_cause}</div>                
-      <div>symptoms: {event.symptoms}</div>
+      <span id='stress_event'>{event.stress_event}</span>
+      <div id='event_details'>User Name: {event.full_name}</div>
+      <div id='event_details' >stress score: {event.stress_score}</div>
+      <div id='event_details'>working efficiency: {event.work_efficiency}</div>
+      <div id='event_details'>coping: {event.coping}</div>
+      <div id='event_details'>date updated: <NiceDate date={event.date_recorded} /></div>
+      <div id='event_details'>mood: {event.mood}</div>
+      <div id='event_details'>trigger of stress: {event.stress_cause}</div>                
+      <div id='event_details'>symptoms: {event.symptoms}</div>
       
       
     </>
@@ -56,13 +57,18 @@ export default class EventPage extends Component{
     
     return(
       <section className='EventPage'>
+      <div className='event_page_content'>
       {content}
-      <button type='button' onClick={()=>this.deleteEventRequest(eventId)}>delete</button>
-      <Link
-          
+      <div className='event_update_button'>
+      <button className='content_delete' type='button' onClick={()=>this.deleteEventRequest(eventId)}>delete</button>
+      
+      <Link          
         to={`/edit-event/${eventId}`}>
           edit
         </Link>
+        </div>
+        </div>
+        <ParticleComponent />
       </section>
     )
   }

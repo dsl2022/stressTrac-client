@@ -14,7 +14,7 @@ export default class LandingPage extends Component{
       ,understand, reflect, have your stress under control.
         </p>
         <div className='explore-streSTrac'>
-        <Link
+        <Link 
           to='/register'
          > Explore StresTrac</Link>
       </div>

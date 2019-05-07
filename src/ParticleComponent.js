@@ -8,13 +8,13 @@ export default () => (
     params={{
 	    "particles": {
 	        "number": {
-	            "value": 160,
+	            "value": 50,
 	            "density": {
 	                "enable": false
 	            }
 	        },
 	        "size": {
-	            "value": 3,
+	            "value": 10,
 	            "random": true,
 	            "anim": {
 	                "speed": 4,

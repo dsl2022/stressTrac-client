@@ -12,29 +12,32 @@
   flex-direction: column;
   padding:60px;
   margin-top:150px;
-  
+  font-family: 'Roboto', sans-serif;
 }
-.explore-streSTrac a{
-  
-  color:white;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-}
+
 
 #landing-title{
   color:white;
-  font-size: 80px;
-  
-  text-align: center;
-}
-.landing-slogan{
-  color:white;
-  font-size: 38px;
-  
+  font-size: 80px;  
   text-align: center;
 }
 
+#landing-title:hover{
+  color:white;
+  font-size: 90px;  
+  text-align: center;
+}
+
+.landing-slogan{
+  color:white;
+  font-size: 30px;
+  
+  text-align: center;
+}
+.explore-streSTrac{
+  margin:0 auto;
+  padding:20px;
+}
 .how-it-work{
   margin-top:100px;
   color:white;
@@ -42,4 +45,37 @@
   text-align: center;
 }
 
+.explore-streSTrac a{
+  color:white;
+  display:inline-block;
+  padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:'Roboto',sans-serif;
+  font-size:20px;
+  font-weight:400;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.15s;
+}
 
+.explore-streSTrac a:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+}
+
+ 
+.explore-streSTrac a:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+}
+
+@media all and (max-width:30em){
+  a{
+    display:block;
+    margin:0.4em auto}
+  }
+  

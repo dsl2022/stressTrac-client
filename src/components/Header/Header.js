@@ -91,13 +91,18 @@ export default class Header extends Component {
      if(!TokenService.hasAuthToken())
      renderHeader = this.renderLoginLink()
 
+     
     // {TokenService.hasAuthToken()
     //   ? this.renderLogoutAndAccountLink()
     //   :this.renderLoginLink()
     //   }
     return <>
       <nav className='Header'>
-      <h1 className='logo'>StresTrac</h1>
+      <Link to='/home'>
+         <h1 className='logo'>StresTrac</h1>
+      </Link>
+      
+      
           {renderHeader}
         
           

@@ -4,38 +4,56 @@
   justify-content: space-between;
 }
 
+
 .logo {
-  
+    
   color:white;
   font-size: 30px;
 }
 
-.Header__not-logged-in {
+.logo:hover {
+    
+  color:white;
+  font-size: 35px;
+}
 
+.Header__not-logged-in {
+  font-family:'Roboto',sans-serif;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   margin-right: 10px;
   text-decoration: none;
+  margin-top:5px;
 }
 
 .Header__not-logged-in a{
   font-size:25px;
   margin-bottom:5px;
+  font-family:'Roboto',sans-serif;
 
 }
 
 .Header__logged-in{
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   font-size:25px;
   margin-bottom:5px;
+  margin-right:20px;
+  font-family:'Roboto',sans-serif;
+  width:40%;
   
 }
 
+.Header__logged-in a{
+  font-size:25px;
+  margin-bottom:5px;
+  font-family:'Roboto',sans-serif;
+
+}
 
 .Header a{
   color:white;

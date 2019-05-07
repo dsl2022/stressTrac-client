@@ -14,7 +14,7 @@ export default class EventListItem extends Component{
         eventLevel='acute'
     return(
       
-      <Link to={`/events/${event.id}`} className='EventListItem_link'>
+      <Link to={`/events/${event.id}`} >
       <div className='EventListItem'>
           <div className='EventListItem__heading'>
           <h2 >

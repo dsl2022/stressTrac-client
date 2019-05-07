@@ -1,13 +1,4 @@
-.search_by_title_input
-{
-  border: 1px solid #ddd;
-  display: block;
-  font-size: 0.1em;
-  margin-bottom: 40px;  
-  text-align: left;  
-  border-radius: 4px;
-  width:100px;
-}
+
 
 .EventItemsContainer{
   display:flex;
@@ -17,40 +8,49 @@
 }
 
 .EventListPage{
-
-  
-  
-  background-color: white;
+  background-color: #049c41;
+  text-decoration: none;
 }
 
-.search_by_title input{
-  margin-bottom: 2px;
+.EventListPage input{  
+    border: 1px solid #ddd;
+    display: block;
+    font-size: 20px;    
+    margin-top: 10px;
+    padding: 5px;
+    text-align: left;
+   
+    border-radius: 4px;  
 }
+
+
 
 .search_by_title{
   display:flex;
-  justify-content: space-between,center;
+  justify-content: space-evenly,center;
   align-items: baseline;  
-  width:350px;
+  width:500px;
   margin-left: 20px;  
   margin-bottom: 5px;
 }
 
-.search_by_title input{
-  font-size:30x;
-  height:18px;
-  width:180px;
-  margin-left: 15px;
-  
+.search_by_date{
+  display:flex;
+  justify-content: space-between,center;
+  align-items: baseline;  
+  width:500px;
+  margin-left: 20px;  
+  margin-bottom: 5px;
 }
 
-.search-bar{
 
+.search-bar{
+  
   display:flex;
   justify-content: space-evenly;
-  align-items: baseline;  
-  font-size: 18px;
-  margin-top: 20px;
+  align-items: center;  
+  font-size: 15px;
+  
 }
 
 .show-all-event-button{
@@ -59,8 +59,9 @@
   
 }
 
-.search_by_date label{
+.EventListPage label{
   margin-right: 15px;
+  color:white;
 }
 
 .date-picker {
@@ -72,3 +73,25 @@
   margin-top: 5px;
   height: 20px;
 }
+
+.show-all-event-button {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-size:20px;
+  font-weight:300;
+  color:white;
+  background-color: #049c41;
+  text-align:center;
+  transition: all 0.2s;
+  }
+  
+  .show-all-event-button:hover{
+    font-size:25px;
+  }
+  
