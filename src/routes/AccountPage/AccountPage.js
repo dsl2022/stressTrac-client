@@ -44,7 +44,7 @@ export default class AccountPage extends Component{
     return(
       <div className='AccountPage'>
         <div className='account_title'>
-          {this.state.user} stress analytic
+          {this.state.user} stress analysis
         </div>
         <div className='plots'>
         <Plot
@@ -53,13 +53,49 @@ export default class AccountPage extends Component{
                 x: this.state.x,
                 y: this.state.y,
                 name: 'mood chart',
-                showlegend:true
+                showlegend:true,
+                marker: {color: 'white'}
              },
               
            ]}
            graphDiv="graph"
-           layout={ {width: 680, height: 440, title: 'Mood Chart'
-           ,plot_bgcolor:'#003D0E',paper_bgcolor:'#003D0E',font:{color:'white'},
+           layout={ {width: 780, height: 540, title: 'Mood Chart'
+           ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
+           xaxis:{
+              showgrid: false,
+              gridcolor:'white',
+              gridwidth:0.01,
+              linecolor:'white',
+              zerolinecolor:'white',
+              tickcolor:'white'
+
+           },
+           yaxis:{
+            showgrid: false,
+            gridcolor:'white',
+            gridwidth:0.01,
+            linecolor:'white',
+            zerolinecolor:'white',
+            tickcolor:'white'
+           }
+          } }
+          />
+          </div>
+          <div className='plots'>
+        <Plot
+            data={[
+               {
+                x: this.state.x,
+                y: this.state.workEfficiencyArray,
+                name: 'work efficiency chart',
+                showlegend:true,
+                marker: {color: 'white'}
+             },
+              
+           ]}
+           graphDiv="graph"
+           layout={ {width: 680, height: 440, title: 'work efficiency chart'
+           ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
            xaxis:{
               showgrid: false,
               gridcolor:'white',
