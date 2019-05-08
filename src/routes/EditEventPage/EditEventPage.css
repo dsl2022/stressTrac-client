@@ -1,0 +1,41 @@
+.edit_event_form{
+  display: flex;    
+  justify-content: center;
+  color:white;
+  font-size: 15px;
+}
+
+.edit_event_form input{
+  width:500px;
+  
+}
+.edit_event_form select{
+  
+  margin-bottom: 10px;
+}
+.edit_event_page{
+  display:flex;
+  flex-direction: column;
+  background-color: #049c41;
+  font-family:'Roboto',sans-serif;
+  
+}
+
+.edit_event_title{
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+@media(max-width:600px){
+  .edit_event_title{
+    font-size: 20px;
+  }
+  .edit_event_form select{
+    width:100%;
+  }
+
+  .edit_event_form input{
+    width:100%;
+  }
+}

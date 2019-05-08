@@ -55,7 +55,7 @@ export default class EditEventForm extends Component{
           {error && <p className='red'>{error}</p>}
         </div>
         <div className='stress_event'>
-          <label htmlFor='AddEventForm__stress_event'>
+          <label htmlFor='EditEventForm__stress_event'>
             Event 
           </label>
           <input
@@ -63,11 +63,11 @@ export default class EditEventForm extends Component{
             type='text'
             defaultValue={event.stress_event}
             required
-            id='AddEventForm__stress_event'>
+            id='EditEventForm__stress_event'>
           </input>
         </div>
         <div className='stress_cause'>
-          <label htmlFor='AddEventForm__stress_cause'>
+          <label htmlFor='EditEventForm__stress_cause'>
             Stress causes 
           </label>
           <input
@@ -75,11 +75,11 @@ export default class EditEventForm extends Component{
             type='text'
             defaultValue={event.stress_cause}
             required
-            id='AddEventForm__stress_cause'>
+            id='EditEventForm__stress_cause'>
           </input>
         </div>
         <div className='coping'>
-          <label htmlFor='AddEventForm__coping'>
+          <label htmlFor='EditEventForm__coping'>
             coping
           </label>
           <input
@@ -87,42 +87,40 @@ export default class EditEventForm extends Component{
             type='text'
             defaultValue={event.coping}
             required
-            id='AddEventForm__coping'>
+            id='EditEventForm__coping'>
           </input>
         </div>
        
-       <div>
-       <label htmlFor='AddEventForm__mood'>
+       <div className='edit_event_dropdown_selection'>
+       <label htmlFor='EditEventForm__mood'>
             Mood 
           </label >
-          <select name="mood" type='text' required id='AddEventForm__mood'>
+          <select name="mood" type='text' required id='EditEventForm__mood'>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
-       </div>
-       <div>
-       <label htmlFor='AddEventForm__stress_score'>
+       
+       <label htmlFor='EditEventForm__stress_score'>
             Stress Score 
           </label>
-          <select name="stress_score" type='text' required id='AddEventForm__stress_score'>
+          <select name="stress_score" type='text' required id='EditEventForm__stress_score'>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
-       </div>
-       <div>
-       <label htmlFor='AddEventForm__work_efficiency'>
+      
+       <label htmlFor='EditEventForm__work_efficiency'>
             Ability to work and focus 
           </label>
-          <select name='work_efficiency' type='text' required id='AddEventForm__work_efficiency'>
+          <select name='work_efficiency' type='text' required id='EditEventForm__work_efficiency'>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
        </div>
        <div className='symptoms'>
-          <label htmlFor='AddEventForm__symptoms'>
+          <label htmlFor='EditEventForm__symptoms'>
             Symptoms 
             </label>
           <textarea
@@ -131,7 +129,7 @@ export default class EditEventForm extends Component{
             value={this.state.symptoms}
              onChange={this.handleChangeSymptoms}            
             required
-            id='AddEventForm__symptoms'>
+            id='EditEventForm__symptoms'>
           </textarea>
           
         </div>
@@ -139,7 +137,7 @@ export default class EditEventForm extends Component{
         
           
        
-        <button type='submit'>
+        <button className='edit_event_submit' type='submit'>
           submit
         </button>
       </form>

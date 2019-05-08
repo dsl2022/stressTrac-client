@@ -1,0 +1,52 @@
+.EditEventForm input,
+textarea {
+  border: 1px solid #ddd;
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  padding: 10px;
+  text-align: left;
+  
+  border-radius: 4px;
+  
+}
+
+
+.edit_event_dropdown_selection{
+  display:flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width:100%;
+  
+  
+}
+
+.edit_event_submit {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-size:20px;
+  font-weight:300;
+  color:white;
+  background-color: #049c41;
+  text-align:center;
+  transition: all 0.2s;
+  }
+  
+  .edit_event_submit:hover{
+    font-size:25px;
+  }
+
+  @media(max-width:600px){
+    .EditEventForm input{
+      width:100%;
+    }
+    .edit_event_submit{
+      width:100%;
+    }
+  }

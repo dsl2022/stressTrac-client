@@ -82,6 +82,20 @@
   }
   a{
     display:block;
-    margin:0.4em auto}
+    margin:0.4em auto
+  }
+  .landing-slogan{
+    font-size:20px;
+    
+  }
+
+  .landing-hero{
+    width:100%;
+    
+  }
+  .how-it-work{
+    font-size: 40px;
+  }
+
   }
   

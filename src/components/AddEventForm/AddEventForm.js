@@ -27,7 +27,7 @@ export default class AddEventForm extends Component{
       work_efficiency:work_efficiency.value
     }
    
-    console.log(this.props.props,'test this inside handle submit')
+    
     EventApiService.postEvent(newEvent)
     this.props.props.history.push('/')
     
