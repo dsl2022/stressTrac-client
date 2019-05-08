@@ -1,0 +1,19 @@
+.AccountPage{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #049c41;
+}
+
+.plots{
+  display:flex;
+  justify-content: center;
+  padding:20px;
+}
+
+
+.account_title{
+  font-size: 30px;
+  color:white;
+  text-align: center;
+}

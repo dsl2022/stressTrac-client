@@ -4,6 +4,7 @@
 .footer{
   display:flex;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 
@@ -14,6 +15,7 @@ body {
   margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
 }
+
 
 
 
