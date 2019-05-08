@@ -5,6 +5,7 @@ import EventListItem from '../../components/EventListItem/EventListItem'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { format as formatDate } from 'date-fns'
+import ParticleComponent from "../../ParticleComponent";
 import './EventListPage.css'
 export default class EventListPage extends Component{
   
@@ -83,6 +84,8 @@ export default class EventListPage extends Component{
         <div className='search_by_date'>
           <label>
         Search By Date:
+          
+          </label>
           <span className='date-picker'>
           <DatePicker 
             
@@ -91,7 +94,7 @@ export default class EventListPage extends Component{
           
           />
           </span>
-          </label>
+         
           </div>
           
         <div className='show-all-event'>
@@ -109,7 +112,7 @@ export default class EventListPage extends Component{
           : this.renderEvents()}
       </div>
       </section>
-      
+      <ParticleComponent />
       </div>
     )
   }

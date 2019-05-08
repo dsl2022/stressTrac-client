@@ -17,9 +17,9 @@ export default class EventListItem extends Component{
       <Link to={`/events/${event.id}`} >
       <div className='EventListItem'>
           <div className='EventListItem__heading'>
-          <h2 >
+          <div className='event_title'>
             {event.stress_event}
-          </h2>
+          </div>
           </div>
           <div className='event_level'>
             {eventLevel}

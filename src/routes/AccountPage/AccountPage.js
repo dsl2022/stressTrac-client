@@ -5,7 +5,7 @@ import './AccountPage.css'
 export default class AccountPage extends Component{
   render(){
     return(
-      <div>
+      <div className='AccountPage'>
         <h1>Analytic Charts and Graphs and Data to be implemented
           in the future
         </h1>

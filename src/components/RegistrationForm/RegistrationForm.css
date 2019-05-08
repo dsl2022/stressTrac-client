@@ -2,7 +2,7 @@
   padding:70px;
   margin-top: 80px;
   margin-bottom: 80px;
-  width:300px;
+  
 }
 
 .RegistrationForm label{
@@ -42,5 +42,11 @@
   
   .register_submit:hover{
     font-size:25px;
+  }
+
+  @media(max-width:600px){
+    .RegistrationForm{
+        text-align: center;
+    }
   }
   

@@ -127,7 +127,7 @@ export default class AddEventForm extends Component{
         
           
        
-        <button type='submit'>
+        <button className='add_event_submit' type='submit'>
           submit
         </button>
       </form>

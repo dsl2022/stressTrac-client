@@ -9,7 +9,7 @@
 
 .EventListPage{
   background-color: #049c41;
-  text-decoration: none;
+  
 }
 
 .EventListPage input{  
@@ -29,7 +29,7 @@
   display:flex;
   justify-content: space-evenly,center;
   align-items: baseline;  
-  width:500px;
+  
   margin-left: 20px;  
   margin-bottom: 5px;
 }
@@ -38,7 +38,7 @@
   display:flex;
   justify-content: space-between,center;
   align-items: baseline;  
-  width:500px;
+  
   margin-left: 20px;  
   margin-bottom: 5px;
 }
@@ -95,3 +95,30 @@
     font-size:25px;
   }
   
+
+  @media (max-width:600px){
+    .date-picker{
+      margin-left:0px;
+    }
+    .search-bar{            
+      flex-direction: column;  
+         
+    }
+
+    .search_by_date label{
+      text-align: center;
+    }
+
+    .search_by_title{
+      flex-direction: column;
+      margin-left: 0px;
+      padding:5px;  
+      margin:0 auto;
+            
+    }
+    .search_by_date{
+      margin-left: 0px;      
+      flex-direction: column;  
+      margin:10px auto;
+    }
+  }

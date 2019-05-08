@@ -67,3 +67,13 @@
   font-size: 35px;
   
 }
+
+@media (max-width:600px){
+  .Header{
+    flex-direction: column;
+  }
+  .Header__logged-in{
+    flex-direction: column;
+    width:100%;
+  }
+}

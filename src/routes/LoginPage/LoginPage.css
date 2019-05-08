@@ -7,4 +7,10 @@
 }
 
 
-  
+@media(max-width:600px){
+  .LoginPage{
+    flex-direction: column;
+    display:flex;
+    text-align: center;    
+  }
+}
