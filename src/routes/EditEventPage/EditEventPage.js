@@ -21,7 +21,7 @@ class EditEventPage extends Component{
 
 
   render(){
-    console.log(this.comtext,'test context for event')
+    
     return(
       <div>
       <h1>Edit a stress event</h1>
