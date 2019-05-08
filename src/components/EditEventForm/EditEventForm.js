@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import EventContext from '../../context/EventContext'
 import EventApiService from '../../services/event-api-service';
-
+import './EditEventForm.css'
 
 export default class EditEventForm extends Component{
 
@@ -45,7 +45,7 @@ export default class EditEventForm extends Component{
     const { error } = this.state
     const event = this.context.event
 
-    console.log(this.state.symptoms,'test symptoms')
+    
     return (
       <form
         className='EditEventForm'

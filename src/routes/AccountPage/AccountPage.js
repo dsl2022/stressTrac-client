@@ -40,7 +40,7 @@ export default class AccountPage extends Component{
     .catch(error=>this.setState({error:error}))
 }
   render(){
-    console.log(this.state,'test line1')
+    //console.log(this.state,'test line1')
     return(
       <div className='AccountPage'>
         <div className='account_title'>

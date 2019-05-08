@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import LoginLogoutContext from '../../context/LoginLogoutContext'
 import './Header.css'
-// import './Header.css'
-//import { Redirect } from 'react-router-dom'
+
 
 export default class Header extends Component {
   
@@ -52,8 +51,8 @@ export default class Header extends Component {
   }
 
   renderLoginLink() {
-    console.log(TokenService.hasAuthToken(),'test has token')
-    console.log(this.context.setHideLogoutTrue)
+    
+    
     return (
       <div className='Header__not-logged-in'>
       

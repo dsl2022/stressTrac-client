@@ -7,8 +7,15 @@
   flex-shrink: 0;
 }
 
+main{
+  flex: 1;
+}
 
-
+.App{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 /* ---- reset ---- */
 
 body {
