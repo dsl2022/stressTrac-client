@@ -25,3 +25,8 @@ npm i
 ```
 npm t
 ```
+
+
+stress gauge calculation formula 
+
+$$/frac{average stress score+average stress}{average work efficiency}$$

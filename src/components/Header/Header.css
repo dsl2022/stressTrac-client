@@ -81,5 +81,8 @@
     padding:0px;
     text-align: center;
   }
+  .Header__not-logged-in{
+    flex-direction: column;
+  }
 
 }

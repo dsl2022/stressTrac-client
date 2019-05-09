@@ -96,8 +96,8 @@ export default class EditEventForm extends Component{
             Mood 
           </label >
           <select name="mood" type='text' required id='EditEventForm__mood'>
-          <option value="1">Depression or general unhappiness</option>
-            <option value="2">Loneliness and isolation</option>
+          <option value="1">happy and relief</option>
+            <option value="2">minor anxiety</option>
             <option value="3">Anxiety and agitation</option>
             <option value="4">Moodiness, irritability, or anger</option>
             <option value="5">Feeling overwhelmed,loss of control</option>

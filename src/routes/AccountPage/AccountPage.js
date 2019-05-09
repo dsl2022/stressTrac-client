@@ -13,6 +13,7 @@ export default class AccountPage extends Component{
     stress_level:[],
     date_recorded:[],
     stress_score:[],
+    plot_y_data:{},
     user:''
     
     
@@ -31,27 +32,47 @@ export default class AccountPage extends Component{
       const moodIndex = moodArray.map((element,index)=>index)
       console.log(moodIndex,'moodIndex',moodArray,'moodArray',stressScoreArray,'stress score',
       workEfficiencyArray,'work efficiency',stressLevelArray,'stress level',dateRecordedArray,'date recorded')
+      const plot_y_data ={
+        Mood_Array:moodArray,
+        Stress_Score_Array:stressScoreArray,
+        Work_Efficiency_Array:workEfficiencyArray,
+      }
+      
       this.setState({
         x:dateRecordedArray,
         mood:moodArray,
-      user:res[0].full_name})
+        user:res[0].full_name,
+        plot_y_data:plot_y_data
+      })
+      
 
     })            
     .catch(error=>this.setState({error:error}))
 }
   render(){
-    //console.log(this.state,'test line1')
+    console.log(this.state,'test line1')
+    const options = Object.keys(this.state.plot_y_data)
+    let optionsKey = options.map(option=>
+      {return `<option value='${option}'>${option.split('_').join(' ')}</option>`})
+    optionsKey = optionsKey.join('')
+    console.log(typeof optionsKey)
+    const test = "<option value='Mood_Array'>Mood Array</option><option value='Stress_Score_Array'>Stress Score Array</option><option value='Work_Efficiency_Array'>Work Efficiency Array</option>"
     return(
       <div className='AccountPage'>
         <div className='account_title'>
           {this.state.user} stress analysis
         </div>
         <div className='plots'>
+        <div className='yvalue_selector'>
+          <select className='select_yvalue'>
+            {test}
+          </select>
+        </div>
         <Plot
             data={[
                {
                 x: this.state.x,
-                y: this.state.y,
+                y: this.state.mood,
                 name: 'mood chart',
                 showlegend:true,
                 marker: {color: 'white'}

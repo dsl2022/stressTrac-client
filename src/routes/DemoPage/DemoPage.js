@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import DemoLoginForm from '../../components/DemoLogin/DemoLoginForm'
 import './DemoPage.css'
-
+import ParticleComponent from "../../ParticleComponent";
 
 export default class DemoPage extends Component {
   static defaultProps = {
@@ -21,12 +21,23 @@ export default class DemoPage extends Component {
 
   render() {
     return (
-      <section className='LoginPage'>
-        <h2>Sign in</h2>
+      <section className='DemoLoginPage'>
+      <div className='demo_container'>
+      <div className='demo_about'>
+        <h2>Welcome!</h2>
+        <p>
+        StresTrac is a tool designed to help you understand your stress,through this
+        demo you will get to experience the core functionality of StresTrac, we hope
+        you enjoy it.
+
+        </p>
+        </div>
         <div className='LoginFormContainer'>
         <DemoLoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />
+        </div>
+        <ParticleComponent />
         </div>
       </section>
     )

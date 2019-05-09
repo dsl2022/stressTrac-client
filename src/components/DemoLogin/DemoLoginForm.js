@@ -39,7 +39,7 @@ export default class LoginForm extends Component {
   render() {
     
     return (
-      <div className='LoginInForm'>
+      <div className='DemoLoginInForm'>
       
         <button onClick = {()=>this.handleSubmitJwtAuth()} className='demo_login' type='button'>
           Explore Demo
