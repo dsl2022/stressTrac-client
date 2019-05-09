@@ -9,6 +9,7 @@ import EventPage from '../../routes/EventPage/EventPage'
 import EditEventPage from '../../routes/EditEventPage/EditEventPage'
 import AddEventPage from '../../routes/AddEventPage/AddEventPage'
 import LandingPage from '../../routes/LandingPage/LandingPage'
+import DemoPage from '../../routes/DemoPage/DemoPage'
 import Header from '../Header/Header'
 import Footer from '../../components/Footer/Footer'
 import AccountPage from '../../routes/AccountPage/AccountPage'
@@ -53,10 +54,19 @@ class App extends Component {
             path={'/login'}
             component={LoginPage}
           />
+
+          <PublicOnlyRoute 
+            path={'/demo'}
+            component={DemoPage}
+          />
+
           <Route 
             path={'/home'}
             component={LandingPage}
           />
+
+          
+
           <PrivateRoute 
             path={'/add-event'}
             component={AddEventPage}

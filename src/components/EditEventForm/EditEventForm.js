@@ -96,27 +96,33 @@ export default class EditEventForm extends Component{
             Mood 
           </label >
           <select name="mood" type='text' required id='EditEventForm__mood'>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+          <option value="1">Depression or general unhappiness</option>
+            <option value="2">Loneliness and isolation</option>
+            <option value="3">Anxiety and agitation</option>
+            <option value="4">Moodiness, irritability, or anger</option>
+            <option value="5">Feeling overwhelmed,loss of control</option>
           </select>
        
        <label htmlFor='EditEventForm__stress_score'>
             Stress Score 
           </label>
           <select name="stress_score" type='text' required id='EditEventForm__stress_score'>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">Low stressful</option>
+            <option value="2">Mild stressful</option>
+            <option value="3">Somewhat stressful</option>
+            <option value="4">Very stressful</option>
+            <option value="5">Extremely stressful</option>
           </select>
       
        <label htmlFor='EditEventForm__work_efficiency'>
             Ability to work and focus 
           </label>
           <select name='work_efficiency' type='text' required id='EditEventForm__work_efficiency'>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+          <option value="1">Doing well</option>
+            <option value="2">Hard to focus</option>
+            <option value="3">Completely distracted</option>
+            <option value="4">No desire to perform</option>
+            <option value="5">Can not work can not focus</option>
           </select>
        </div>
        <div className='symptoms'>

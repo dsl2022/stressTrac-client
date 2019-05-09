@@ -61,6 +61,10 @@ export default class Header extends Component {
           Home
         </Link>
         
+        <Link
+          to='/demo'>
+          Demo
+        </Link>
       
         <Link
           to='/login'>
