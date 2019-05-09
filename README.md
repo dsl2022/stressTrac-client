@@ -29,4 +29,4 @@ npm t
 
 stress gauge calculation formula 
 
-$$/frac{average stress score+average stress}{average work efficiency}$$
+<!-- \left(\sqrt{x}\right)^2 = x -->

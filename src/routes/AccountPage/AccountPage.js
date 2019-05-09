@@ -52,10 +52,10 @@ export default class AccountPage extends Component{
   render(){
     console.log(this.state,'test line1')
     const options = Object.keys(this.state.plot_y_data)
-    let optionsKey = options.map(option=>
-      {return `<option value='${option}'>${option.split('_').join(' ')}</option>`})
-    optionsKey = optionsKey.join('')
-    console.log(typeof optionsKey)
+    let optionsKey = options.map((option,index)=>
+      {return <option key={index} value={option}>{option.split('_').join(' ')}</option>})
+  
+    console.log(optionsKey)
     const test = "<option value='Mood_Array'>Mood Array</option><option value='Stress_Score_Array'>Stress Score Array</option><option value='Work_Efficiency_Array'>Work Efficiency Array</option>"
     return(
       <div className='AccountPage'>
@@ -65,7 +65,7 @@ export default class AccountPage extends Component{
         <div className='plots'>
         <div className='yvalue_selector'>
           <select className='select_yvalue'>
-            {test}
+         {optionsKey}
           </select>
         </div>
         <Plot
