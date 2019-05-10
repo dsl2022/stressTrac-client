@@ -9,11 +9,37 @@
   display:flex;
   justify-content: center;
   padding:20px;
+  flex-direction: column;
 }
 
+.plot_1{
+  margin:0 auto;
+}
+
+.plot_2{
+  margin:0 auto;
+}
+
+.yvalue_selector{
+  text-align: right;
+  margin: 0 77px;
+}
+
+.select_yvalue{
+  font-size: 20px;
+}
 
 .account_title{
   font-size: 30px;
   color:white;
   text-align: center;
+}
+
+@media(max-width:600px){
+  .plots{
+    flex-direction:column;    
+  }
+  .plot_1{
+    width:400px;
+  }
 }

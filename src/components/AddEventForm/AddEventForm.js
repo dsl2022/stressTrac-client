@@ -110,11 +110,11 @@ export default class AddEventForm extends Component{
             Ability to work and focus 
           </label>
           <select name='work_efficiency' type='text' required id='AddEventForm__work_efficiency'>
-            <option value="1">Doing well</option>
-            <option value="2">Hard to focus</option>
+            <option value="5">Doing well</option>
+            <option value="4">Hard to focus</option>
             <option value="3">Completely distracted</option>
-            <option value="4">No desire to perform</option>
-            <option value="5">Can not work can not focus</option>
+            <option value="2">No desire to perform</option>
+            <option value="1">Can not work can not focus</option>
           </select>
        </div>
        <div className='symptoms'>

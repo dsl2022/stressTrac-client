@@ -15,7 +15,9 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
+.demo_1_img{
+  
+}
 #landing-title{
   color:white;
   font-size: 80px;  
@@ -43,6 +45,11 @@
   color:white;
   font-size: 80px;  
   text-align: center;
+  
+}
+
+.images_group{
+  flex-direction: row;
 }
 
 .explore-streSTrac a{
