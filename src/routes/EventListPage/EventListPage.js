@@ -105,7 +105,7 @@ export default class EventListPage extends Component{
           </div>
         </div>
         
-      <section className='EventListPage'>
+      <section className='EventListPageSection'>
       <div className='EventItemsContainer'>
         {error
           ? <p className='red'>There was an error, try again</p>
