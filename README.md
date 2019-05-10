@@ -12,6 +12,12 @@ stress events, in addition it provides data analysis through charts based on the
 
 StreSTrac has a beautiful client built with React, and it has a fully functional backend with a CRUD-featured server built with Node.js and Express and the databases built with PostgreSQL, that stores user's entry data and handle the client's query, it also has a users registration system along with authentification and it is hosted on Heroku
 
+New users can access the demo without registration and experience all features of StreSTrac. 
+
+<div>
+<img src='/src/assets/images/readme-demo-4.png' alt='chart_3' width='400px'/>
+</div>
+
 <div>
 <img src='/src/assets/images/readme-demo-3.png' alt='chart_3' width='400px'/>
 </div>
@@ -20,7 +26,7 @@ StreSTrac has a beautiful client built with React, and it has a fully functional
 <img src='/src/assets/images/readme-demo-4.png' alt='chart_3' width='400px'/>
 </div>
 
-New users can access the demo without registration and experience all features of StreSTrac. 
+
 
 ## Future improvement 
 * More chart features
