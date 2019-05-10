@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import ParticleComponent from "../../ParticleComponent";
 import Plot from 'react-plotly.js';
 import EventApiService from '../../services/event-api-service'
-import Plotly from 'plotly.js/dist/plotly'
 import './AccountPage.css'
 
 export default class AccountPage extends Component{
@@ -80,8 +79,7 @@ export default class AccountPage extends Component{
     let optionsKey = options.map((option,index)=>
       {return <option key={index} value={option}>{option.split('_').join(' ')}</option>})
   
-    // console.log( this.state.x,
-    //   this.state.plot_y_data.Work_Efficiency_Array,'test arrays')
+   console.log(this.state.plot_y_data,'test plot data')
     
     return(
       <div className='AccountPage'>
@@ -101,19 +99,24 @@ export default class AccountPage extends Component{
                {
                 x: this.state.x,
                 y: this.state.y,
-                name: this.state.chart_name,
+                name: this.state.chart_name.slice(0,this.state.chart_name.length-5),
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'line',
-                type:'bar'
+                type:'histogram2dcontour',
+               
+                
              },
               
            ]}
-           
+           useResizeHandler
+          style={{ width: '100%', height: '100%' }}
            graphDiv="graph"
-           layout={ {width: 780, height: 540, title: this.state.chart_name.slice(-5,this.state.chart_name.length)+' Mood Chart'
+           
+           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'Bar Chart'
           
            ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
+           
            xaxis:{
               showgrid: false,
               gridcolor:'white',
@@ -132,10 +135,11 @@ export default class AccountPage extends Component{
             tickcolor:'white'
            }
           } }
+
+           
           />
-          </div>
-          <div className='plot_2'>
-        <Plot
+          
+          <Plot
             data={[
                {
                 x: this.state.x,
@@ -143,35 +147,131 @@ export default class AccountPage extends Component{
                 name: this.state.chart_name,
                 showlegend:true,
                 marker: {color: 'white'},
+                mode:'line',
                 type:'histogram2d',
                
                 
              },
               
            ]}
+           useResizeHandler
+          style={{ width: '100%', height: '100%' }}
            graphDiv="graph"
-           layout={ {width: 680, height: 440, title: this.state.chart_name+' 2d histogram'
+           
+           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'2D Histogram'
+          
            ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
-            xaxis:{
+           
+           xaxis:{
               showgrid: false,
               gridcolor:'white',
               gridwidth:0.01,
               linecolor:'white',
-               zerolinecolor:'white'
+              zerolinecolor:'white',
+              tickcolor:'white'
 
-            },
-            yaxis:{
-             showgrid: false,
-             gridcolor:'white',
-             gridwidth:0.01,
-             linecolor:'white',
-           zerolinecolor:'white'
-            }
+           },
+           yaxis:{
+            showgrid: false,
+            gridcolor:'white',
+            gridwidth:0.01,
+            linecolor:'white',
+            zerolinecolor:'white',
+            tickcolor:'white'
+           }
           } }
+
+           
+          />
+<Plot
+            data={[
+               {
+                x: this.state.plot_y_data.Mood_Array,
+                y: this.state.plot_y_data.Stress_Score_Array,
+                name: this.state.chart_name.slice(0,this.state.chart_name.length-5),
+                showlegend:true,
+                marker: {color: 'white'},
+                mode:'markers',
+                type:'scatter',
+               
+                
+             },
+              
+           ]}
+           useResizeHandler
+          style={{ width: '100%', height: '100%' }}
+           graphDiv="graph"
+           
+           layout={ {autosize: true, title: 'Frequency of Entry'
+          
+           ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
+           
+           xaxis:{
+              showgrid: false,
+              gridcolor:'white',
+              gridwidth:0.01,
+              linecolor:'white',
+              zerolinecolor:'white',
+              tickcolor:'white'
+
+           },
+           yaxis:{
+            showgrid: false,
+            gridcolor:'white',
+            gridwidth:0.01,
+            linecolor:'white',
+            zerolinecolor:'white',
+            tickcolor:'white'
+           }
+          } }
+
+           
           />
 
+<Plot
+            data={[
+               {
+                x: this.state.x,
+                y: this.state.y,
+                name: this.state.chart_name.slice(0,this.state.chart_name.length-5),
+                showlegend:true,
+                marker: {color: 'white'},
+                mode:'line',
+                type:'histogram2dcontour',
+               
+                
+             },
+              
+           ]}
+           useResizeHandler
+          style={{ width: '100%', height: '100%' }}
+           graphDiv="graph"
+           
+           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'Bar Chart'
+          
+           ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
+           
+           xaxis:{
+              showgrid: false,
+              gridcolor:'white',
+              gridwidth:0.01,
+              linecolor:'white',
+              zerolinecolor:'white',
+              tickcolor:'white'
 
+           },
+           yaxis:{
+            showgrid: false,
+            gridcolor:'white',
+            gridwidth:0.01,
+            linecolor:'white',
+            zerolinecolor:'white',
+            tickcolor:'white'
+           }
+          } }
 
+           
+          />
           </div>
         <ParticleComponent />
       </div>
