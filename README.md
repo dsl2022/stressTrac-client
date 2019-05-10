@@ -3,7 +3,7 @@ This is my first capstone project at Thinkful, StreSTrac is an inspiration I got
 stress events, in addition it provides data analysis through charts based on the data entry from the users. 
 
 some pictures here 
-<img src='/src/assets/images' alt='chart_3' width='400px'/>
+<img src='/src/assets/images/readme-demo-1.png' alt='chart_3' width='400px'/>
 StreSTrac has a beautiful client built with React, and it has a fully functional backend with a CRUD-featured server built with Node.js and Express and the databases built with PostgreSQL, that stores user's entry data and handle the client's query, it also has a users registration system along with authentification and it is hosted on Heroku
 
 
