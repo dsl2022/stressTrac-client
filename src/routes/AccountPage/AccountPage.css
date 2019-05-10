@@ -21,12 +21,14 @@
 }
 
 .yvalue_selector{
+  
   text-align: right;
-  margin: 0 77px;
+  margin: 0 300px;
 }
 
 .select_yvalue{
   font-size: 20px;
+  position:fixed;
 }
 
 .account_title{

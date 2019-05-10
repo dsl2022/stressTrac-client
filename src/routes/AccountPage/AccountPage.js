@@ -16,7 +16,7 @@ export default class AccountPage extends Component{
     stress_score:[],
     plot_y_data:{},
     user:'',
-       layout:{}    
+    count:{}
  }
  
  componentDidMount(){
@@ -26,8 +26,8 @@ export default class AccountPage extends Component{
 //      .then(data=>{console.log(data,'test data')}) chris told me this kills it, it added delay. 
     .then(res=>{
       const moodArray=res.map(res=>{return res.mood+1})
-      const stressScoreArray=res.map(res=>{return res.stress_score})
-      const workEfficiencyArray=res.map(res=>{return res.work_efficiency})
+      const stressScoreArray=res.map(res=>{return res.stress_score+1})
+      const workEfficiencyArray=res.map(res=>{return res.work_efficiency+1})
       
       const stressSymptom=res.map(res=>{return res.symptoms})
       const stressEvents=res.map(res=>{return res.stress_event})
@@ -40,6 +40,8 @@ export default class AccountPage extends Component{
         Stress_Score_Array:stressScoreArray,
         Work_Efficiency_Array:workEfficiencyArray,        
       }
+
+
       
       this.setState({
         x:dateRecordedArray,
@@ -59,7 +61,20 @@ export default class AccountPage extends Component{
     
     const title=e.target.value.split('_').join(' ')
     console.log(title,'test event value')
-    this.setState({y:this.state.plot_y_data[e.target.value],chart_name:title})
+    const count ={one:[],two:[],three:[],four:[],five:[]}
+    this.state.plot_y_data[e.target.value].forEach(element=>{
+      if(element===0)
+        count.one.push(element)
+        if(element===1)
+        count.two.push(element)  
+        if(element===2)
+        count.three.push(element)
+        if(element===3)
+        count.four.push(element)
+        if(element===4)
+        count.five.push(element)
+    })
+    this.setState({y:this.state.plot_y_data[e.target.value],chart_name:title,count:count})
     console.log(this.state.x,this.state.y,'test')
 
   }
@@ -78,9 +93,35 @@ export default class AccountPage extends Component{
     const options = Object.keys(this.state.plot_y_data)
     let optionsKey = options.map((option,index)=>
       {return <option key={index} value={option}>{option.split('_').join(' ')}</option>})
-  
-   console.log(this.state.plot_y_data,'test plot data')
     
+    let countObject = this.state.count
+    let countKeys = Object.keys(this.state.count)
+    let countArray = countKeys.map(key=>{return countObject[key].length})
+    console.log(countArray,'test count keys')
+
+
+const mood_labels = ['happy and relief',
+'minor anxiety',
+'Anxiety and agitation',
+'Moodiness, irritability, or anger',
+'Feeling overwhelmed,loss of control']
+
+
+const stress_score = ['Low stressful',
+'Mild stressful',
+'Somewhat stressful',
+'Very stressful',
+'Extremely stressful']
+
+const work_efficiency = ['Can not work can not focus',
+'No desire to perform',
+'Completely distracted',
+'Hard to focus',
+'Doing well']
+
+console.log(this.state.chart_name,'test chart name')
+
+
     return(
       <div className='AccountPage'>
         <div className='account_title'>
@@ -94,6 +135,27 @@ export default class AccountPage extends Component{
         <div className='plots'>
         
         <div className='plot_1'>
+
+        <Plot  
+          data={[
+            {values:countArray,
+            labels:work_efficiency,
+            domain: {column: 0},
+            name: 'work efficiency',
+            hoverinfo: 'label+percent+name',
+            hole: .4,
+            type: 'pie'}
+
+          ]}
+
+          graphDiv="graph"
+
+          layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'Pie Chart'
+          
+           ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
+        }}
+        />
+
         <Plot
             data={[
                {
@@ -101,9 +163,13 @@ export default class AccountPage extends Component{
                 y: this.state.y,
                 name: this.state.chart_name.slice(0,this.state.chart_name.length-5),
                 showlegend:true,
-                marker: {color: 'white'},
+                marker: {color: 'white',
+                line:{
+                  color:'white',
+                  width:15
+                }},
                 mode:'line',
-                type:'histogram2dcontour',
+                type:'bar',
                
                 
              },
@@ -192,7 +258,7 @@ export default class AccountPage extends Component{
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'markers',
-                type:'scatter',
+                type:'histogram',
                
                 
              },
@@ -233,7 +299,7 @@ export default class AccountPage extends Component{
                {
                 x: this.state.x,
                 y: this.state.y,
-                name: this.state.chart_name.slice(0,this.state.chart_name.length-5),
+                name: '',
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'line',
@@ -247,7 +313,7 @@ export default class AccountPage extends Component{
           style={{ width: '100%', height: '100%' }}
            graphDiv="graph"
            
-           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'Bar Chart'
+           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'2D Contour Chart'
           
            ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
            

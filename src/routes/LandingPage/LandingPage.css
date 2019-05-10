@@ -47,7 +47,10 @@
   text-align: center;
   
 }
-
+.how-it-work-demo{
+  margin-top:50px;
+  font-size:20px;
+}
 .images_group{
   flex-direction: row;
 }
