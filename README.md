@@ -23,7 +23,7 @@ New users can access the demo without registration and experience all features o
 </div>
 
 <div>
-<img src='/src/assets/images/readme-demo-4.png' alt='chart_3' width='400px'/>
+<img src='/src/assets/images/readme-demo-5.png' alt='chart_3' width='400px'/>
 </div>
 
 
