@@ -1,25 +1,28 @@
 ## Introduction
-This is my first capstone project at Thinkful, StreSTrac is an inspiration I got based on my memory of the many years in the past when I suffered anxiety and stress during my college years.StreSTrac at its core is a logging tool for recording
-stress events, in addition it provides data analysis through charts based on the data entry from the users. 
+This is my first capstone project at Thinkful, StreSTrac is an inspiration I got based on my memory of the many years in the past when I suffered anxiety and stress during my college years.I wish I could build a tool to track my stress events and later I can analyze it. 
+
+StreSTrac at its core is a logging tool for recording stress events, in addition it provides data analysis through charts based on the data entry from the users. 
 
 <div>
-<img src='/src/assets/images/readme-demo-1.png' alt='chart_3' width='400px'/>
+<img src='/src/assets/images/readme-demo-1.png' alt='chart_3' width='600px'/>
+</div>
+figure a: Landing Page
+
+<div>
+<img src='/src/assets/images/readme-demo-2.png' alt='chart_3' width='600px'/>
+</div>
+figure b: Demo page 
+
+StreSTrac has a beautiful client built with React(see figures above), and it has a fully functional backend with a CRUD-featured [server](https://github.com/JizongL/strestrac-server) built with Node.js and Express and the databases built with PostgreSQL, that stores user's entry data and handle the client's queries, and it also has a users registration system along with authentification function and the server is hosted on Heroku while the client is hosted on Zeit. 
+
+New users can access the demo without registration and experience all features of StreSTrac, such as the charts, user data, adding data etc.(see figures below) 
+
+<div>
+<img src='/src/assets/images/readme-demo-4.png' alt='chart_3' width='600px'/>
 </div>
 
 <div>
-<img src='/src/assets/images/readme-demo-2.png' alt='chart_3' width='400px'/>
-</div>
-
-StreSTrac has a beautiful client built with React, and it has a fully functional backend with a CRUD-featured server built with Node.js and Express and the databases built with PostgreSQL, that stores user's entry data and handle the client's query, it also has a users registration system along with authentification and it is hosted on Heroku
-
-New users can access the demo without registration and experience all features of StreSTrac. 
-
-<div>
-<img src='/src/assets/images/readme-demo-4.png' alt='chart_3' width='400px'/>
-</div>
-
-<div>
-<img src='/src/assets/images/readme-demo-3.png' alt='chart_3' width='400px'/>
+<img src='/src/assets/images/readme-demo-3.png' alt='chart_3' width='600px'/>
 </div>
 
 <div>
