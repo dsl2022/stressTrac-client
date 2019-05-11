@@ -29,7 +29,7 @@ export default class LandingPage extends Component{
      <div className='how-it-work'>
         HOW IT WORKS
         <div className='how-it-work-demo'>
-        <div class='chart_1'>
+        <div className='chart_1'>
           <img src={demo} alt='chart_1' width='400px'/>
           <p>
             New users can experience StreSTrac through its 
@@ -37,14 +37,14 @@ export default class LandingPage extends Component{
           </p>
         </div>
         <div className='images_group'>
-        <div class='chart_2'>
+        <div className='chart_2'>
           <img src={chart_1} alt='chart_2' width='400px'/>
           <p>
             StreSTrac provide informative charts based on your
             data entry
           </p>
         </div>
-        <div class='chart_3'>
+        <div className='chart_3'>
           <img src={pie_chart} alt='chart_3' width='400px'/>
           <p>
             StreSTrac is safe and secured, start using it now
