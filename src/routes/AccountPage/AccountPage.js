@@ -151,7 +151,8 @@ pie_chart_label=mood_label
             type: 'pie'}
 
           ]}
-
+          useResizeHandler
+          style={{ width: '100%', height: '100%' }}
           graphDiv="graph"
 
           layout={ {autosize: true, title: this.state.chart_name.slice(0,this.state.chart_name.length-5)+'Pie Chart'
