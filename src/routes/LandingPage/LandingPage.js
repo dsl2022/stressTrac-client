@@ -32,7 +32,7 @@ export default class LandingPage extends Component{
         <div class='chart_1'>
           <img src={demo} alt='chart_1' width='400px'/>
           <p>
-            New users can experience StreSTrac through our 
+            New users can experience StreSTrac through its 
             Demo feature
           </p>
         </div>

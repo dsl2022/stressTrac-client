@@ -100,28 +100,32 @@ export default class AccountPage extends Component{
     console.log(countArray,'test count keys')
 
 
-const mood_labels = ['happy and relief',
+const mood_label = ['happy and relief',
 'minor anxiety',
 'Anxiety and agitation',
 'Moodiness, irritability, or anger',
 'Feeling overwhelmed,loss of control']
 
 
-const stress_score = ['Low stressful',
+const stress_score_label = ['Low stressful',
 'Mild stressful',
 'Somewhat stressful',
 'Very stressful',
 'Extremely stressful']
 
-const work_efficiency = ['Can not work can not focus',
+const work_efficiency_label = ['Can not work can not focus',
 'No desire to perform',
 'Completely distracted',
 'Hard to focus',
 'Doing well']
-
+let pie_chart_label
 console.log(this.state.chart_name,'test chart name')
-
-
+if(this.state.chart_name==='Stress Score Array')
+pie_chart_label=stress_score_label
+if(this.state.chart_name==='Work Efficiency Array')
+pie_chart_label=work_efficiency_label
+if(this.state.chart_name==='Mood Array')
+pie_chart_label=mood_label
     return(
       <div className='AccountPage'>
         <div className='account_title'>
@@ -139,7 +143,7 @@ console.log(this.state.chart_name,'test chart name')
         <Plot  
           data={[
             {values:countArray,
-            labels:work_efficiency,
+            labels:pie_chart_label,
             domain: {column: 0},
             name: 'work efficiency',
             hoverinfo: 'label+percent+name',
@@ -155,7 +159,7 @@ console.log(this.state.chart_name,'test chart name')
            ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
         }}
         />
-
+        
         <Plot
             data={[
                {
