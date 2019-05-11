@@ -45,4 +45,16 @@
   .plot_1{
     width:400px;
   }
+
+  .yvalue_selector{
+   
+    margin:0 130px;
+    margin-top: 15px;
+    margin-bottom:140px;
+    display:flex;
+    justify-content: center;
+    position:sticky;
+    top: 0;
+  }
+
 }
