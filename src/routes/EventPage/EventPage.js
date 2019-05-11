@@ -35,15 +35,35 @@ export default class EventPage extends Component{
 
   renderEvent(){
     const{event} = this.context
-    
+    const mood_labels = ['happy and relief',
+'minor anxiety',
+'Anxiety and agitation',
+'Moodiness, irritability, or anger',
+'Feeling overwhelmed,loss of control']
+
+const stress_score = ['Low stressful',
+'Mild stressful',
+'Somewhat stressful',
+'Very stressful',
+'Extremely stressful']
+
+const work_efficiency = [
+'Doing well',
+'Hard to focus',
+'Completely distracted',
+'No desire to perform',
+'Can not work can not focus'
+]
+
+
     return <>
       <span id='stress_event'>{event.stress_event}</span>
       <div id='event_details'>User Name: {event.full_name}</div>
-      <div id='event_details' >stress score: {event.stress_score}</div>
-      <div id='event_details'>working efficiency: {event.work_efficiency}</div>
+      <div id='event_details' >stress score: {stress_score[event.stress_score]}</div>
+      <div id='event_details'>working efficiency: {work_efficiency[event.work_efficiency]}</div>
       <div id='event_details'>coping: {event.coping}</div>
       <div id='event_details'>date updated: <NiceDate date={event.date_recorded} /></div>
-      <div id='event_details'>mood: {event.mood}</div>
+      <div id='event_details'>mood: {mood_labels[event.mood]}</div>
       <div id='event_details'>trigger of stress: {event.stress_cause}</div>                
       <div id='event_details'>symptoms: {event.symptoms}</div>
       
