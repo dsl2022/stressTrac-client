@@ -1,9 +1,5 @@
-// make React available
 import React from 'react';
-
-//make the ReactDOM available, necessary for rendering the component
 import ReactDOM from 'react-dom';
-//import './index.css';
 import App from './components/App/App';
 import {BrowserRouter} from 'react-router-dom'
 import { EventListProvider } from './context/EventListContext'
@@ -14,11 +10,6 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 
 library.add(fab)
-//make the App component available
-
-// jest.mock('react-plotly.js', () => ({
-//   Plot: () => ({})
-// }));
 jest.mock('react-plotly.js', () => () => <div/>)
 
 

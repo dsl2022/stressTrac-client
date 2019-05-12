@@ -8,7 +8,6 @@
 .plots{
   display:flex;
   justify-content: center;
-  
   flex-direction: column;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .yvalue_selector{
-  
+  z-index: 99 !important;
   text-align: right;
   margin: 0 300px;
 }
@@ -30,6 +29,14 @@
   font-size: 20px;
   position:fixed;
   margin-left:50px;
+  z-index: 99 !important;
+}
+
+.chart_intro{
+  color:white;
+  font-size: 20px;
+  width:80%;
+  margin:0 auto;
 }
 
 .account_title{
@@ -42,12 +49,21 @@
   .plots{
     flex-direction:column;    
   }
+
   .plot_1{
     width:400px;
   }
 
+  .select_yvalue{
+    font-size: 20px;
+    position:sticky;
+    top:0;
+    margin-left:220px;
+    z-index: 99 !important;
+  }
+
   .yvalue_selector{
-   
+    z-index: 99 !important;
     margin:0 130px;
     margin-top: 15px;
     margin-bottom:140px;
@@ -56,5 +72,4 @@
     position:sticky;
     top: 0;
   }
-
 }

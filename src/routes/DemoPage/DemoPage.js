@@ -10,15 +10,11 @@ export default class DemoPage extends Component {
       push: () => {},
     },
   }
-
-  
-
   handleLoginSuccess = () => {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/'
     history.push(destination)
   }
-
   render() {
     return (
       <section className='DemoLoginPage'>
@@ -29,7 +25,6 @@ export default class DemoPage extends Component {
         StresTrac is a tool designed to help you understand your stress,through this
         demo you will get to experience the core functionality of StresTrac, we hope
         you enjoy it.
-
         </p>
         </div>
         <div className='LoginFormContainer'>

@@ -21,8 +21,7 @@ class EditEventPage extends Component{
   }
 
 
-  render(){
-    
+  render(){    
     return(
       <div className='edit_event_page'>
       <div className='edit_event_title'>Edit a stress event</div>

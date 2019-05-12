@@ -7,18 +7,17 @@
 
 .edit_event_form input{
   width:500px;
-  
 }
-.edit_event_form select{
-  
+
+.edit_event_form select{  
   margin-bottom: 10px;
 }
+
 .edit_event_page{
   display:flex;
   flex-direction: column;
   background-color: #049c41;
-  font-family:'Roboto',sans-serif;
-  
+  font-family:'Roboto',sans-serif;  
 }
 
 .edit_event_title{
@@ -31,6 +30,7 @@
   .edit_event_title{
     font-size: 20px;
   }
+  
   .edit_event_form select{
     width:100%;
   }
