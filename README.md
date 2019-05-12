@@ -23,9 +23,6 @@ The key to reduce stress is to deligently record one's stress event so that the 
 <img src='/src/assets/images/readme-demo-3.png' alt='readme-demo-3' width='600px'/>
 </div>
 
-### Technology 
-[StreSTrac](https://stress-tracker-app.2015rpro.now.sh) has an responsive client built with React, its backend has a CRUD-featured server [check github here](https://github.com/JizongL/strestrac-server) also [deployment to heroku](https://blooming-mountain-74904.herokuapp.com/api) built with Node.js and Express and PostgreSQL, client is hosted on Zeit. 
-
 <div style="display: flex; justify-content: center;">
 <img src='/src/assets/images/readme-demo-5.png' alt='readme-demo-5' width='600px'/>
 </div>
@@ -46,6 +43,8 @@ The key to reduce stress is to deligently record one's stress event so that the 
 Check [The Kanban](https://github.com/JizongL/capstone-1-ideas/projects/3) to see project progress
 
 ## Prototype and design
+
+Check out [interactive Prototype demo](https://org.modao.cc/app/fc2138eb090369a57b665c0445f51881)
 
 ### Home landing page 
 
@@ -117,6 +116,26 @@ npm t
 ```
 npm start
 ```
+
+### built
+
+* [React](https://reactjs.org/)
+
+* [Plotly](https://plot.ly/)
+
+* [Express](https://expressjs.com/)
+
+* [Node.js](https://nodejs.org/en/)
+
+* [PostgreSQL](https://www.postgresql.org/)
+
+* [Heroku](https://www.heroku.com/)
+
+* [Zeit](https://zeit.co/)
+
+### brief description
+
+[StreSTrac](https://stress-tracker-app.2015rpro.now.sh) has an responsive client built with React, its backend has a CRUD-featured server [check github here](https://github.com/JizongL/strestrac-server) also [deployment to heroku](https://blooming-mountain-74904.herokuapp.com/api) built with Node.js and Express and PostgreSQL, client is hosted on Zeit. 
 
 
 ### License
