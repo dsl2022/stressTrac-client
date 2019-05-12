@@ -44,7 +44,7 @@ export default class EventListPage extends Component{
     if(!this.state.startDate && !this.state.searchTerm)
       eventList = eventList.map(event=>event)
     if(this.state.searchTerm)
-      eventList=eventList.filter(event=>event.stress_event.includes(this.state.searchTerm))
+      eventList=eventList.filter(event=>event.stress_event.toLowerCase().includes(this.state.searchTerm))
     
     if(this.state.startDate)
     eventList=eventList.filter(event=>this.NiceDate({date:event.date_recorded}).includes(this.NiceDate({date:this.state.startDate}).slice(0,10)))
@@ -60,7 +60,7 @@ export default class EventListPage extends Component{
   }
 
   searchByTitle=e=>{
-    const searchTerm = e.target.value
+    const searchTerm = e.target.value.toLowerCase()
     this.setState({searchTerm:searchTerm})
   }
 
