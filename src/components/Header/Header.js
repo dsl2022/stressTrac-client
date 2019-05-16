@@ -44,7 +44,7 @@ export default class Header extends Component {
         <Link
           
           to='/add-event'>
-          Add a Event        
+          Add an event        
         </Link>
       </div>
     )
