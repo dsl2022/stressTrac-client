@@ -13,11 +13,12 @@ export default class AccountPage extends Component{
     work_eff:[],
     stress_level:[],
     date_recorded:[],
-    chart_name:'',
+    chart_name:'Mood Array',
     stress_score:[],
     plot_y_data:{},
     user:'',
-    count:{}
+    count:{},
+    countArray:[]
  }
  
  componentDidMount(){
@@ -38,34 +39,59 @@ export default class AccountPage extends Component{
         Work_Efficiency_Array:workEfficiencyArray,        
       }
       
+      // temporary set the initial data for pie chart, need to refractor in the future for cleaner code.
+     
+      const countarray = [0,0,0,0,0]
+      moodArray.forEach(element=>{
+        if(element===1)
+          countarray[0]+=1
+          if(element===2)
+          countarray[1]+=1
+          if(element===3)
+          countarray[2]+=1
+          if(element===4)
+          countarray[3]+=1
+          if(element===5)
+          countarray[4]+=1
+      })      
+    // let countObject = this.state.count
+    // let countKeys = Object.keys(this.state.count)
+    // let countArray = countKeys.map(key=>{return countObject[key].length})
+      
       this.setState({
         x:dateRecordedArray,
+        y:moodArray,        
         mood:moodArray,
         user:res[0].full_name,
         plot_y_data:plot_y_data,
         Stress_symptoms:stressSymptom,
-        Stress_Events:stressEvents
-      })      
+        Stress_Events:stressEvents,
+        countArray:countarray
+      })
+      console.log(moodArray,countarray,this.state.countArray,'test inside mount array')      
     })            
     .catch(error=>this.setState({error:error}))
 }
 
   selectYValue=(e)=>{    
-    const title=e.target.value.split('_').join(' ')    
-    const count ={one:[],two:[],three:[],four:[],five:[]}
+    const title=e.target.value.split('_').join(' ') 
+   
+    // set up count array for pie chart and store it in state. 
+    const countarray = [0,0,0,0,0]
     this.state.plot_y_data[e.target.value].forEach(element=>{
-      if(element===0)
-        count.one.push(element)
-        if(element===1)
-        count.two.push(element)  
-        if(element===2)
-        count.three.push(element)
-        if(element===3)
-        count.four.push(element)
-        if(element===4)
-        count.five.push(element)
+      if(element===1)
+      countarray[0]+=1
+      if(element===2)
+      countarray[1]+=1
+      if(element===3)
+      countarray[2]+=1
+      if(element===4)
+      countarray[3]+=1
+      if(element===5)
+      countarray[4]+=1
     })
-    this.setState({y:this.state.plot_y_data[e.target.value],chart_name:title,count:count})    
+        
+    this.setState({y:this.state.plot_y_data[e.target.value],chart_name:title,countArray:countarray})    
   }
 
   chartRelayout () {
@@ -80,41 +106,9 @@ export default class AccountPage extends Component{
     let optionsKey = options.map((option,index)=>
       {return <option key={index} value={option}>{option.split('_').join(' ').slice(0,option.length-5)}</option>})
     
-    let countObject = this.state.count
-    let countKeys = Object.keys(this.state.count)
-    let countArray = countKeys.map(key=>{return countObject[key].length})
-  
-
-
-  // const mood_label = ['happy and relief',
-  //   'minor anxiety',
-  //   'Anxiety and agitation',
-  //   'Moodiness, irritability, or anger',
-  //   'Feeling overwhelmed,loss of control']
-
-
-  // const stress_score_label = ['Low stressful',
-  //   'Mild stressful',
-  //   'Somewhat stressful',
-  //   'Very stressful',
-  //   'Extremely stressful']
-
-  // const work_efficiency_label = ['Can not work can not focus',
-  //   'No desire to perform',
-  //   'Completely distracted',
-  //   'Hard to focus',
-  //   'Doing well']
-
-  // const intro_analysis = `There are 3 stress descriptors, mood, stress score and work \
-  // performance available foranalysis. You can click the dropdown menu to select each one for details.\
-  // The Pie chart features the percentage of each of the score levels each descriptor. \ 
-  // The bar chart is showing the frequency of each descriptor every month, in conjuction with \
-  // the 2D histogram heatmap, which tells which score appears more fequent for each descriptor\
-  // , for example, level 2 is stands out for stress score during May and July(select to verify).\ 
-  // Frequency of entry histogram is showing how active the user has been keeping track of events.\ 
-  // And the 2D contour map shows a similar picture compared to the 2D histogram, and it's give\
-  // a more general view about the score level distribution.`
-
+    
+   
+    console.log(this.state.countArray,'test state count')
     const {mood_label,stress_score_label,work_efficiency_label,intro_analysis} = accountPageFixture()
     
     let pie_chart_label
@@ -135,8 +129,9 @@ export default class AccountPage extends Component{
           </p>
         </div>
         <div className='yvalue_selector'>
-          <select onChange={this.selectYValue} className='select_yvalue'>
-         {optionsKey}
+          <select onChange={this.selectYValue} className='select_yvalue'>                   
+          
+            {optionsKey}
           </select>
         </div> 
         <div className='plots'>        
@@ -144,7 +139,7 @@ export default class AccountPage extends Component{
 
         <Plot  
           data={[
-            {values:countArray,
+            {values:this.state.countArray,
             labels:pie_chart_label,
             domain: {column: 0},
             name: 'work efficiency',
