@@ -16,11 +16,6 @@ export default class EventListPage extends Component{
     searchTerm:''
   }
 
-  
-
- 
-
-
   handleChange=(date)=> {
     this.setState({
       startDate: date
@@ -29,18 +24,13 @@ export default class EventListPage extends Component{
 
   componentDidMount(){
     this.context.clearError()
-    EventApiService.getEvents()
-    
-//      .then(data=>{console.log(data,'test data')}) chris told me this kills it, it added delay. 
+    EventApiService.getEvents()    
       .then(this.context.setEventList)            
       .catch(this.context.setError)
   }
 
-  renderEvents(){
-    
-    let { eventList = [] } = this.context
-    //console.log(this.state,'test state eventlist')
-    // if searchTerm is present, then filter events by it. 
+  renderEvents(){    
+    let { eventList = [] } = this.context 
     if(!this.state.startDate && !this.state.searchTerm)
       eventList = eventList.map(event=>event)
     if(this.state.searchTerm)

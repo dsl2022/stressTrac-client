@@ -32,7 +32,7 @@ export default class EditEventForm extends Component{
       work_efficiency:work_efficiency.value,
       date_recorded:new Date().toISOString()
     }
-    console.log(this.props,'test props')
+   
     EventApiService.updateEvent(eventToUpdate,this.context.event.id)
     .then(()=>{
       this.props.props.history.push('/')

@@ -17,13 +17,9 @@ export default class Header extends Component {
     TokenService.clearAuthToken();
     this.context.setHideLogoutTrue()
     this.setState(TokenService.hasAuthToken)
-    //this.setState({hideLogout:this.context.hideLogout})
-    //debugger
 
-    //console.log(this.props)
   }
-  renderLogoutAndAccountLink() {
-    console.log(this.context,'test context in header')
+  renderLogoutAndAccountLink() {   
     return (
       <div className='Header__logged-in'>
         <Link
@@ -51,11 +47,8 @@ export default class Header extends Component {
   }
 
   renderLoginLink() {
-    
-    
     return (
-      <div className='Header__not-logged-in'>
-      
+      <div className='Header__not-logged-in'>      
         <Link
           to='/home'>
           Home
@@ -81,11 +74,6 @@ export default class Header extends Component {
   }
 
   render() {
-    // TODO: login and logout doesn't refresh immediately. 
-    //console.log(window.location.pathname,'test location')
-    // if(window.location.pathname==='/login'){
-    //   const hideLogout=true
-    // }
     let renderHeader
     
      if(TokenService.hasAuthToken())
@@ -94,24 +82,13 @@ export default class Header extends Component {
      if(!TokenService.hasAuthToken())
      renderHeader = this.renderLoginLink()
 
-     
-    // {TokenService.hasAuthToken()
-    //   ? this.renderLogoutAndAccountLink()
-    //   :this.renderLoginLink()
-    //   }
     return <>
       <nav className='Header'>
       <Link to='/home'>
          <h1 className='logo'>StresTrac</h1>
       </Link>
-      
-      
-          {renderHeader}
-        
-          
+          {renderHeader}    
       </nav>
-
-      
     </>
   }
 }

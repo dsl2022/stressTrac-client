@@ -39,8 +39,7 @@ export default class AccountPage extends Component{
         Work_Efficiency_Array:workEfficiencyArray,        
       }
       
-      // temporary set the initial data for pie chart, need to refractor in the future for cleaner code.
-     
+      // temporary set the initial data for pie chart, need to refractor in the future for cleaner code.     
       const countarray = [0,0,0,0,0]
       moodArray.forEach(element=>{
         if(element===1)
@@ -54,10 +53,7 @@ export default class AccountPage extends Component{
           if(element===5)
           countarray[4]+=1
       })      
-    // let countObject = this.state.count
-    // let countKeys = Object.keys(this.state.count)
-    // let countArray = countKeys.map(key=>{return countObject[key].length})
-      
+          
       this.setState({
         x:dateRecordedArray,
         y:moodArray,        
@@ -67,8 +63,7 @@ export default class AccountPage extends Component{
         Stress_symptoms:stressSymptom,
         Stress_Events:stressEvents,
         countArray:countarray
-      })
-      console.log(moodArray,countarray,this.state.countArray,'test inside mount array')      
+      })    
     })            
     .catch(error=>this.setState({error:error}))
 }
@@ -105,10 +100,7 @@ export default class AccountPage extends Component{
     const options = Object.keys(this.state.plot_y_data)
     let optionsKey = options.map((option,index)=>
       {return <option key={index} value={option}>{option.split('_').join(' ').slice(0,option.length-5)}</option>})
-    
-    
-   
-    console.log(this.state.countArray,'test state count')
+               
     const {mood_label,stress_score_label,work_efficiency_label,intro_analysis} = accountPageFixture()
     
     let pie_chart_label
@@ -205,9 +197,7 @@ export default class AccountPage extends Component{
             zerolinecolor:'white',
             tickcolor:'white'
            }
-          } }
-
-           
+          } }           
           />
           
           <Plot
@@ -219,9 +209,7 @@ export default class AccountPage extends Component{
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'line',
-                type:'histogram2d',
-               
-                
+                type:'histogram2d',                               
              },
               
            ]}
@@ -250,10 +238,9 @@ export default class AccountPage extends Component{
             zerolinecolor:'white',
             tickcolor:'white'
            }
-          } }
-
-           
+          } }           
           />
+      
       <Plot
             data={[
                {
@@ -263,18 +250,13 @@ export default class AccountPage extends Component{
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'markers',
-                type:'histogram',
-               
-                
-             },
-              
+                type:'histogram',                               
+             },              
            ]}
            useResizeHandler
           style={{ width: '100%', height: '100%' }}
-           graphDiv="graph"
-           
-           layout={ {autosize: true, title: 'Frequency of Entry'
-          
+           graphDiv="graph"           
+           layout={ {autosize: true, title: 'Frequency of Entry'          
            ,plot_bgcolor:'#049c41',paper_bgcolor:'#049c41',font:{color:'white'},
            
            xaxis:{
@@ -294,13 +276,12 @@ export default class AccountPage extends Component{
             zerolinecolor:'white',
             tickcolor:'white'
            }
-          } }
-
-           
+          }
+        }           
           />
 
-<Plot
-            data={[
+      <Plot
+        data={[
                {
                 x: this.state.x,
                 y: this.state.y,
@@ -308,11 +289,8 @@ export default class AccountPage extends Component{
                 showlegend:true,
                 marker: {color: 'white'},
                 mode:'line',
-                type:'histogram2dcontour',
-               
-                
-             },
-              
+                type:'histogram2dcontour',                               
+             },              
            ]}
            useResizeHandler
           style={{ width: '100%', height: '100%' }}
@@ -339,14 +317,13 @@ export default class AccountPage extends Component{
             zerolinecolor:'white',
             tickcolor:'white'
            }
-          } }
-
-           
-          />
-          </div>
-        <ParticleComponent />
+          } 
+        }           
+         />
       </div>
-      </div>
+    <ParticleComponent />
+  </div>
+</div>
       
       
     )
