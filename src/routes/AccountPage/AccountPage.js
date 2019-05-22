@@ -118,6 +118,7 @@ export default class AccountPage extends Component{
     pie_chart_label=work_efficiency_label
     if(this.state.chart_name==='Mood Array')
     pie_chart_label=mood_label
+    
   return(
       <div className='AccountPage'>
         <div className='account_title'>
@@ -134,7 +135,9 @@ export default class AccountPage extends Component{
             {optionsKey}
           </select>
         </div> 
-        <div className='plots'>        
+        
+        <div className = 'plots'>        
+
         <div className='plot_1'>
 
         <Plot  
@@ -344,6 +347,8 @@ export default class AccountPage extends Component{
         <ParticleComponent />
       </div>
       </div>
+      
+      
     )
   }
 }

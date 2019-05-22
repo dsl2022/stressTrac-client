@@ -11,6 +11,14 @@
   flex-direction: column;
 }
 
+.plots_hidden{
+  display:none;
+}
+
+.plots_show{
+  display:block;
+}
+
 .plot_1{
   margin:0 auto;
 }

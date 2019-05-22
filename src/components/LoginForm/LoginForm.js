@@ -53,6 +53,7 @@ export default class LoginForm extends Component {
           </label>
           <input
             name='user_name'
+            defaultValue='demo'
             id='LoginForm__user_name'>
           </input>
         </div>
@@ -63,6 +64,7 @@ export default class LoginForm extends Component {
           <input
             name='password'
             type='password'
+            defaultValue='demo'
             id='LoginForm__password'>
           </input>
         </div>
