@@ -25,7 +25,7 @@ export default class Header extends Component {
         <Link
           
           to='/account'>
-          Accout
+          Account
         </Link>
         <Link
           onClick={this.handleLogoutClick}
